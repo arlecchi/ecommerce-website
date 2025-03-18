@@ -1,0 +1,802 @@
+[
+ {
+   "purchase_id": 1,
+   "customer_id": 886,
+   "product_name": "Super Mario RPG Cosplay Accessories",
+   "quantity": 3,
+   "total_price": 1369.59,
+   "purchase_date": "2024-12-21"
+ },
+ {
+   "purchase_id": 2,
+   "customer_id": 441,
+   "product_name": "Monster Hunter World Standee",
+   "quantity": 4,
+   "total_price": 2442.28,
+   "purchase_date": "2024-07-22"
+ },
+ {
+   "purchase_id": 3,
+   "customer_id": 479,
+   "product_name": "Final Fantasy VII Keychain Charm",
+   "quantity": 4,
+   "total_price": 920.84,
+   "purchase_date": "2024-05-27"
+ },
+ {
+   "purchase_id": 4,
+   "customer_id": 966,
+   "product_name": "Case Closed Cosplay Costume",
+   "quantity": 4,
+   "total_price": 272.08,
+   "purchase_date": "2024-05-22"
+ },
+ {
+   "purchase_id": 5,
+   "customer_id": 934,
+   "product_name": "Red Dead Redemption 2 Cosplay Accessories",
+   "quantity": 4,
+   "total_price": 2506.32,
+   "purchase_date": "2024-07-19"
+ },
+ {
+   "purchase_id": 6,
+   "customer_id": 11,
+   "product_name": "Toradora Japanese Manga",
+   "quantity": 5,
+   "total_price": 2785.65,
+   "purchase_date": "2024-09-27"
+ },
+ {
+   "purchase_id": 7,
+   "customer_id": 58,
+   "product_name": "The Melancholy of Haruhi Suzumiya Decor",
+   "quantity": 5,
+   "total_price": 1677,
+   "purchase_date": "2024-08-12"
+ },
+ {
+   "purchase_id": 8,
+   "customer_id": 258,
+   "product_name": "Jujutsu Kaisen Art Book",
+   "quantity": 5,
+   "total_price": 4897.55,
+   "purchase_date": "2024-09-20"
+ },
+ {
+   "purchase_id": 9,
+   "customer_id": 168,
+   "product_name": "Black Clover Keychain Charm",
+   "quantity": 3,
+   "total_price": 774.45,
+   "purchase_date": "2024-07-06"
+ },
+ {
+   "purchase_id": 10,
+   "customer_id": 675,
+   "product_name": "Cyberpunk 2077 Standee",
+   "quantity": 1,
+   "total_price": 377.98,
+   "purchase_date": "2024-12-26"
+ },
+ {
+   "purchase_id": 11,
+   "customer_id": 535,
+   "product_name": "Made in Abyss Indonesian Manga",
+   "quantity": 4,
+   "total_price": 712.6,
+   "purchase_date": "2024-11-25"
+ },
+ {
+   "purchase_id": 12,
+   "customer_id": 665,
+   "product_name": "Re:Zero Hoodie",
+   "quantity": 2,
+   "total_price": 1510.06,
+   "purchase_date": "2024-10-05"
+ },
+ {
+   "purchase_id": 13,
+   "customer_id": 901,
+   "product_name": "Hunter x Hunter Plush",
+   "quantity": 3,
+   "total_price": 2230.77,
+   "purchase_date": "2024-09-16"
+ },
+ {
+   "purchase_id": 14,
+   "customer_id": 905,
+   "product_name": "Resident Evil 2 Remake English Manga",
+   "quantity": 2,
+   "total_price": 1880.74,
+   "purchase_date": "2024-07-04"
+ },
+ {
+   "purchase_id": 15,
+   "customer_id": 244,
+   "product_name": "My Hero Academia English Manga",
+   "quantity": 2,
+   "total_price": 348.3,
+   "purchase_date": "2024-12-31"
+ },
+ {
+   "purchase_id": 16,
+   "customer_id": 263,
+   "product_name": "Final Fantasy VII English Manga",
+   "quantity": 2,
+   "total_price": 1719.46,
+   "purchase_date": "2024-10-31"
+ },
+ {
+   "purchase_id": 17,
+   "customer_id": 378,
+   "product_name": "One Piece Bag",
+   "quantity": 5,
+   "total_price": 160.1,
+   "purchase_date": "2024-05-07"
+ },
+ {
+   "purchase_id": 18,
+   "customer_id": 590,
+   "product_name": "Monster Hunter World Indonesian Manga",
+   "quantity": 2,
+   "total_price": 1111.56,
+   "purchase_date": "2025-02-02"
+ },
+ {
+   "purchase_id": 19,
+   "customer_id": 263,
+   "product_name": "Kaguya-sama: Love is War English Manga",
+   "quantity": 1,
+   "total_price": 262.25,
+   "purchase_date": "2024-07-04"
+ },
+ {
+   "purchase_id": 20,
+   "customer_id": 829,
+   "product_name": "Persona 5 Poster",
+   "quantity": 1,
+   "total_price": 400.91,
+   "purchase_date": "2024-08-15"
+ },
+ {
+   "purchase_id": 21,
+   "customer_id": 589,
+   "product_name": "Resident Evil Village Plush",
+   "quantity": 1,
+   "total_price": 395.72,
+   "purchase_date": "2024-05-28"
+ },
+ {
+   "purchase_id": 22,
+   "customer_id": 265,
+   "product_name": "Super Mario Odyssey Scale Figure",
+   "quantity": 4,
+   "total_price": 3365.04,
+   "purchase_date": "2024-03-22"
+ },
+ {
+   "purchase_id": 23,
+   "customer_id": 113,
+   "product_name": "Elden Ring Cosplay Costume",
+   "quantity": 4,
+   "total_price": 1136.28,
+   "purchase_date": "2025-01-10"
+ },
+ {
+   "purchase_id": 24,
+   "customer_id": 550,
+   "product_name": "Fairy Tail Poster",
+   "quantity": 2,
+   "total_price": 555.38,
+   "purchase_date": "2024-09-07"
+ },
+ {
+   "purchase_id": 25,
+   "customer_id": 392,
+   "product_name": "Case Closed Indonesian Manga",
+   "quantity": 3,
+   "total_price": 1988.97,
+   "purchase_date": "2024-09-04"
+ },
+ {
+   "purchase_id": 26,
+   "customer_id": 658,
+   "product_name": "Xenoblade Chronicles 2 Action Figure",
+   "quantity": 1,
+   "total_price": 584.03,
+   "purchase_date": "2024-10-19"
+ },
+ {
+   "purchase_id": 27,
+   "customer_id": 366,
+   "product_name": "Bloodborne Standee",
+   "quantity": 4,
+   "total_price": 554.52,
+   "purchase_date": "2025-01-25"
+ },
+ {
+   "purchase_id": 28,
+   "customer_id": 809,
+   "product_name": "Chunibyo & Other Delusions Mystery Gacha Box",
+   "quantity": 1,
+   "total_price": 416.36,
+   "purchase_date": "2025-01-22"
+ },
+ {
+   "purchase_id": 29,
+   "customer_id": 633,
+   "product_name": "Attack on Titan Poster",
+   "quantity": 3,
+   "total_price": 982.11,
+   "purchase_date": "2024-05-08"
+ },
+ {
+   "purchase_id": 30,
+   "customer_id": 264,
+   "product_name": "Super Mario Odyssey Bag",
+   "quantity": 2,
+   "total_price": 982.48,
+   "purchase_date": "2024-05-15"
+ },
+ {
+   "purchase_id": 31,
+   "customer_id": 961,
+   "product_name": "Fullmetal Alchemist: Brotherhood English Manga",
+   "quantity": 3,
+   "total_price": 2450.61,
+   "purchase_date": "2024-08-05"
+ },
+ {
+   "purchase_id": 32,
+   "customer_id": 329,
+   "product_name": "Naruto Scale Figure",
+   "quantity": 3,
+   "total_price": 287.55,
+   "purchase_date": "2025-01-01"
+ },
+ {
+   "purchase_id": 33,
+   "customer_id": 600,
+   "product_name": "Honkai Star Rail Hoodie",
+   "quantity": 2,
+   "total_price": 1865.48,
+   "purchase_date": "2024-05-04"
+ },
+ {
+   "purchase_id": 34,
+   "customer_id": 309,
+   "product_name": "Naruto T-Shirt",
+   "quantity": 2,
+   "total_price": 1375.06,
+   "purchase_date": "2024-09-23"
+ },
+ {
+   "purchase_id": 35,
+   "customer_id": 901,
+   "product_name": "Persona 5 Cosplay Accessories",
+   "quantity": 1,
+   "total_price": 199.69,
+   "purchase_date": "2025-02-14"
+ },
+ {
+   "purchase_id": 36,
+   "customer_id": 165,
+   "product_name": "Your Lie in April Light Novel",
+   "quantity": 2,
+   "total_price": 1589.82,
+   "purchase_date": "2024-04-02"
+ },
+ {
+   "purchase_id": 37,
+   "customer_id": 430,
+   "product_name": "Dark Souls III Mystery Gacha Box",
+   "quantity": 2,
+   "total_price": 176.66,
+   "purchase_date": "2025-01-03"
+ },
+ {
+   "purchase_id": 38,
+   "customer_id": 315,
+   "product_name": "Black Clover Nendoroid",
+   "quantity": 1,
+   "total_price": 140.63,
+   "purchase_date": "2025-02-20"
+ },
+ {
+   "purchase_id": 39,
+   "customer_id": 132,
+   "product_name": "Monster Hunter Rise Hoodie",
+   "quantity": 1,
+   "total_price": 227.22,
+   "purchase_date": "2024-09-27"
+ },
+ {
+   "purchase_id": 40,
+   "customer_id": 574,
+   "product_name": "Jujutsu Kaisen Nendoroid",
+   "quantity": 1,
+   "total_price": 322.76,
+   "purchase_date": "2024-11-04"
+ },
+ {
+   "purchase_id": 41,
+   "customer_id": 204,
+   "product_name": "Angel Beats! Keychain Charm",
+   "quantity": 2,
+   "total_price": 47.26,
+   "purchase_date": "2024-12-18"
+ },
+ {
+   "purchase_id": 42,
+   "customer_id": 354,
+   "product_name": "Princess Mononoke English Manga",
+   "quantity": 1,
+   "total_price": 576.33,
+   "purchase_date": "2024-07-19"
+ },
+ {
+   "purchase_id": 43,
+   "customer_id": 910,
+   "product_name": "Monster Hunter World Poster",
+   "quantity": 1,
+   "total_price": 933.48,
+   "purchase_date": "2024-05-01"
+ },
+ {
+   "purchase_id": 44,
+   "customer_id": 169,
+   "product_name": "Howl’s Moving Castle Keychain Charm",
+   "quantity": 4,
+   "total_price": 1142.52,
+   "purchase_date": "2024-08-14"
+ },
+ {
+   "purchase_id": 45,
+   "customer_id": 78,
+   "product_name": "NieR: Automata Standee",
+   "quantity": 2,
+   "total_price": 271.92,
+   "purchase_date": "2024-05-24"
+ },
+ {
+   "purchase_id": 46,
+   "customer_id": 826,
+   "product_name": "Final Fantasy XIV Japanese Manga",
+   "quantity": 2,
+   "total_price": 774.52,
+   "purchase_date": "2024-03-28"
+ },
+ {
+   "purchase_id": 47,
+   "customer_id": 783,
+   "product_name": "The Legend of Zelda: Ocarina of Time Light Novel",
+   "quantity": 1,
+   "total_price": 72.2,
+   "purchase_date": "2025-01-26"
+ },
+ {
+   "purchase_id": 48,
+   "customer_id": 621,
+   "product_name": "Final Fantasy VII Decor",
+   "quantity": 3,
+   "total_price": 2048.37,
+   "purchase_date": "2024-10-13"
+ },
+ {
+   "purchase_id": 49,
+   "customer_id": 363,
+   "product_name": "Jujutsu Kaisen Plush",
+   "quantity": 5,
+   "total_price": 3986.8,
+   "purchase_date": "2024-05-02"
+ },
+ {
+   "purchase_id": 50,
+   "customer_id": 788,
+   "product_name": "Dragon Ball Super Nendoroid",
+   "quantity": 4,
+   "total_price": 3745.04,
+   "purchase_date": "2024-03-29"
+ },
+ {
+   "purchase_id": 51,
+   "customer_id": 839,
+   "product_name": "Attack on Titan Art Book",
+   "quantity": 5,
+   "total_price": 3853.25,
+   "purchase_date": "2024-11-30"
+ },
+ {
+   "purchase_id": 52,
+   "customer_id": 495,
+   "product_name": "Spirited Away Mystery Gacha Box",
+   "quantity": 2,
+   "total_price": 1713.46,
+   "purchase_date": "2024-11-01"
+ },
+ {
+   "purchase_id": 53,
+   "customer_id": 826,
+   "product_name": "Erased Poster",
+   "quantity": 1,
+   "total_price": 219.07,
+   "purchase_date": "2024-10-01"
+ },
+ {
+   "purchase_id": 54,
+   "customer_id": 59,
+   "product_name": "Xenoblade Chronicles 2 Action Figure",
+   "quantity": 4,
+   "total_price": 456.96,
+   "purchase_date": "2024-05-29"
+ },
+ {
+   "purchase_id": 55,
+   "customer_id": 358,
+   "product_name": "Diablo IV Japanese Manga",
+   "quantity": 4,
+   "total_price": 207.32,
+   "purchase_date": "2024-03-25"
+ },
+ {
+   "purchase_id": 56,
+   "customer_id": 723,
+   "product_name": "Dragon Ball Super Japanese Manga",
+   "quantity": 1,
+   "total_price": 556.12,
+   "purchase_date": "2024-09-29"
+ },
+ {
+   "purchase_id": 57,
+   "customer_id": 658,
+   "product_name": "Case Closed Art Book",
+   "quantity": 5,
+   "total_price": 3092,
+   "purchase_date": "2025-03-06"
+ },
+ {
+   "purchase_id": 58,
+   "customer_id": 245,
+   "product_name": "Red Dead Redemption 2 Cosplay Accessories",
+   "quantity": 5,
+   "total_price": 3132.9,
+   "purchase_date": "2024-07-02"
+ },
+ {
+   "purchase_id": 59,
+   "customer_id": 557,
+   "product_name": "The Legend of Zelda: Ocarina of Time Plush",
+   "quantity": 5,
+   "total_price": 302.95,
+   "purchase_date": "2024-06-23"
+ },
+ {
+   "purchase_id": 60,
+   "customer_id": 506,
+   "product_name": "Final Fantasy VII Nendoroid",
+   "quantity": 3,
+   "total_price": 257.37,
+   "purchase_date": "2024-06-27"
+ },
+ {
+   "purchase_id": 61,
+   "customer_id": 737,
+   "product_name": "God of War Ragnarok Plush",
+   "quantity": 3,
+   "total_price": 2260.47,
+   "purchase_date": "2024-05-05"
+ },
+ {
+   "purchase_id": 62,
+   "customer_id": 47,
+   "product_name": "Monster Hunter World Japanese Manga",
+   "quantity": 5,
+   "total_price": 4215.9,
+   "purchase_date": "2024-09-08"
+ },
+ {
+   "purchase_id": 63,
+   "customer_id": 325,
+   "product_name": "Pokemon Scarlet & Violet Bag",
+   "quantity": 2,
+   "total_price": 782.1,
+   "purchase_date": "2025-01-08"
+ },
+ {
+   "purchase_id": 64,
+   "customer_id": 151,
+   "product_name": "Love T-Shirt",
+   "quantity": 5,
+   "total_price": 2451.9,
+   "purchase_date": "2024-04-29"
+ },
+ {
+   "purchase_id": 65,
+   "customer_id": 345,
+   "product_name": "Final Fantasy VII Bag",
+   "quantity": 3,
+   "total_price": 2636.91,
+   "purchase_date": "2024-06-25"
+ },
+ {
+   "purchase_id": 66,
+   "customer_id": 861,
+   "product_name": "The Legend of Zelda: Ocarina of Time Cosplay Accessories",
+   "quantity": 2,
+   "total_price": 799.78,
+   "purchase_date": "2024-09-02"
+ },
+ {
+   "purchase_id": 67,
+   "customer_id": 688,
+   "product_name": "Chunibyo & Other Delusions Light Novel",
+   "quantity": 4,
+   "total_price": 3721.04,
+   "purchase_date": "2024-08-13"
+ },
+ {
+   "purchase_id": 68,
+   "customer_id": 624,
+   "product_name": "Black Clover Japanese Manga",
+   "quantity": 1,
+   "total_price": 260.06,
+   "purchase_date": "2024-04-12"
+ },
+ {
+   "purchase_id": 69,
+   "customer_id": 617,
+   "product_name": "Chainsaw Man Nendoroid",
+   "quantity": 4,
+   "total_price": 323.28,
+   "purchase_date": "2025-01-30"
+ },
+ {
+   "purchase_id": 70,
+   "customer_id": 424,
+   "product_name": "Kingdom Hearts III Decor",
+   "quantity": 2,
+   "total_price": 891.18,
+   "purchase_date": "2024-12-05"
+ },
+ {
+   "purchase_id": 71,
+   "customer_id": 551,
+   "product_name": "God of War Ragnarok Action Figure",
+   "quantity": 2,
+   "total_price": 1165.2,
+   "purchase_date": "2024-04-11"
+ },
+ {
+   "purchase_id": 72,
+   "customer_id": 489,
+   "product_name": "Dark Souls III Japanese Manga",
+   "quantity": 1,
+   "total_price": 889.88,
+   "purchase_date": "2024-03-23"
+ },
+ {
+   "purchase_id": 73,
+   "customer_id": 183,
+   "product_name": "Akame ga Kill Nendoroid",
+   "quantity": 2,
+   "total_price": 145.16,
+   "purchase_date": "2024-11-07"
+ },
+ {
+   "purchase_id": 74,
+   "customer_id": 591,
+   "product_name": "Toradora Scale Figure",
+   "quantity": 3,
+   "total_price": 483.51,
+   "purchase_date": "2024-11-29"
+ },
+ {
+   "purchase_id": 75,
+   "customer_id": 74,
+   "product_name": "Genshin Impact Art Book",
+   "quantity": 2,
+   "total_price": 1559.6,
+   "purchase_date": "2024-04-07"
+ },
+ {
+   "purchase_id": 76,
+   "customer_id": 455,
+   "product_name": "Attack on Titan Poster",
+   "quantity": 4,
+   "total_price": 1309.48,
+   "purchase_date": "2024-11-13"
+ },
+ {
+   "purchase_id": 77,
+   "customer_id": 923,
+   "product_name": "Final Fantasy VII Art Book",
+   "quantity": 5,
+   "total_price": 4575.6,
+   "purchase_date": "2024-07-29"
+ },
+ {
+   "purchase_id": 78,
+   "customer_id": 246,
+   "product_name": "Horimiya Action Figure",
+   "quantity": 4,
+   "total_price": 2374.4,
+   "purchase_date": "2024-06-24"
+ },
+ {
+   "purchase_id": 79,
+   "customer_id": 868,
+   "product_name": "Trigun Cosplay Costume",
+   "quantity": 4,
+   "total_price": 2452.68,
+   "purchase_date": "2024-04-25"
+ },
+ {
+   "purchase_id": 80,
+   "customer_id": 948,
+   "product_name": "Hunter x Hunter Decor",
+   "quantity": 5,
+   "total_price": 3989.35,
+   "purchase_date": "2024-07-26"
+ },
+ {
+   "purchase_id": 81,
+   "customer_id": 702,
+   "product_name": "Case Closed English Manga",
+   "quantity": 2,
+   "total_price": 1414.78,
+   "purchase_date": "2024-11-30"
+ },
+ {
+   "purchase_id": 82,
+   "customer_id": 835,
+   "product_name": "Xenoblade Chronicles 3 Poster",
+   "quantity": 3,
+   "total_price": 872.1,
+   "purchase_date": "2024-08-14"
+ },
+ {
+   "purchase_id": 83,
+   "customer_id": 190,
+   "product_name": "Chainsaw Man Plush",
+   "quantity": 3,
+   "total_price": 564.27,
+   "purchase_date": "2024-06-07"
+ },
+ {
+   "purchase_id": 84,
+   "customer_id": 954,
+   "product_name": "Tekken 8 Scale Figure",
+   "quantity": 5,
+   "total_price": 3311.6,
+   "purchase_date": "2024-04-17"
+ },
+ {
+   "purchase_id": 85,
+   "customer_id": 960,
+   "product_name": "Attack on Titan Light Novel",
+   "quantity": 5,
+   "total_price": 3935.8,
+   "purchase_date": "2024-09-15"
+ },
+ {
+   "purchase_id": 86,
+   "customer_id": 79,
+   "product_name": "Fairy Tail English Manga",
+   "quantity": 2,
+   "total_price": 1301.06,
+   "purchase_date": "2024-08-06"
+ },
+ {
+   "purchase_id": 87,
+   "customer_id": 414,
+   "product_name": "Honkai Star Rail Standee",
+   "quantity": 1,
+   "total_price": 491.46,
+   "purchase_date": "2025-02-08"
+ },
+ {
+   "purchase_id": 88,
+   "customer_id": 988,
+   "product_name": "Guilty Gear Strive Nendoroid",
+   "quantity": 3,
+   "total_price": 1846.23,
+   "purchase_date": "2025-02-16"
+ },
+ {
+   "purchase_id": 89,
+   "customer_id": 404,
+   "product_name": "Hunter x Hunter Bag",
+   "quantity": 3,
+   "total_price": 1793.4,
+   "purchase_date": "2024-10-20"
+ },
+ {
+   "purchase_id": 90,
+   "customer_id": 437,
+   "product_name": "Kaguya-sama: Love is War English Manga",
+   "quantity": 5,
+   "total_price": 1311.25,
+   "purchase_date": "2024-06-14"
+ },
+ {
+   "purchase_id": 91,
+   "customer_id": 213,
+   "product_name": "The Promised Neverland English Manga",
+   "quantity": 3,
+   "total_price": 202.05,
+   "purchase_date": "2024-09-29"
+ },
+ {
+   "purchase_id": 92,
+   "customer_id": 889,
+   "product_name": "Super Mario RPG Scale Figure",
+   "quantity": 3,
+   "total_price": 2449.5,
+   "purchase_date": "2024-10-22"
+ },
+ {
+   "purchase_id": 93,
+   "customer_id": 465,
+   "product_name": "Elden Ring Art Book",
+   "quantity": 4,
+   "total_price": 1198.72,
+   "purchase_date": "2024-09-26"
+ },
+ {
+   "purchase_id": 94,
+   "customer_id": 257,
+   "product_name": "Kaguya-sama: Love is War Cosplay Accessories",
+   "quantity": 3,
+   "total_price": 1901.58,
+   "purchase_date": "2024-09-03"
+ },
+ {
+   "purchase_id": 95,
+   "customer_id": 91,
+   "product_name": "Parasyte Plush",
+   "quantity": 1,
+   "total_price": 704.2,
+   "purchase_date": "2024-06-14"
+ },
+ {
+   "purchase_id": 96,
+   "customer_id": 348,
+   "product_name": "Yakuza 0 Stationery",
+   "quantity": 4,
+   "total_price": 1222.36,
+   "purchase_date": "2024-09-09"
+ },
+ {
+   "purchase_id": 97,
+   "customer_id": 912,
+   "product_name": "Cowboy Bebop Indonesian Manga",
+   "quantity": 2,
+   "total_price": 1964.8,
+   "purchase_date": "2024-12-08"
+ },
+ {
+   "purchase_id": 98,
+   "customer_id": 979,
+   "product_name": "Super Mario RPG Scale Figure",
+   "quantity": 2,
+   "total_price": 1633,
+   "purchase_date": "2024-03-29"
+ },
+ {
+   "purchase_id": 99,
+   "customer_id": 45,
+   "product_name": "The Promised Neverland Decor",
+   "quantity": 4,
+   "total_price": 742.72,
+   "purchase_date": "2024-04-18"
+ },
+ {
+   "purchase_id": 100,
+   "customer_id": 955,
+   "product_name": "Sekiro: Shadows Die Twice Action Figure",
+   "quantity": 4,
+   "total_price": 2511.96,
+   "purchase_date": "2024-12-17"
+ }
+]
