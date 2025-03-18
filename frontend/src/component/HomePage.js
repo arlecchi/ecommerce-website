@@ -1,10 +1,13 @@
 import Navigation from "./Navigation";
+import BannerPromotion from "./Banner";
+import { Provider } from "./MyContext";
 
 const HomePage = ()=>{
     return(
-        <>
-            <Navigation/>
-        </>
+            <Provider>
+                <Navigation/>
+                <BannerPromotion/>
+            </Provider>
     )
 }
 
