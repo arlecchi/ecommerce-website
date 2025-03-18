@@ -2,9 +2,10 @@ import { useContext } from "react";
 import {Context} from './MyContext.js'
 
 const HomePage = ()=>{
-    const {user} = useContext(Context)
+    const {product} = useContext(Context)
+    console.log(product)
     return(
-        <h1> this is the Homepage {user.name}</h1>
+        <h1> this is the Homepage </h1>
     )
 }
 
