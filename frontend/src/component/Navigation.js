@@ -1,17 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
-    const scrollToSection = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
+    const navigate = useNavigate();
+
+    const handleNavigateAndScroll = (sectionId) => {
+        navigate("/"); // Navigate to the homepage first
+        
+        setTimeout(() => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 100); // Short delay ensures the homepage loads before scrolling
     };
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
             <div className="container">
-                <a className="navbar-brand" onClick={() => scrollToSection("home")} style={{ cursor: "pointer" }}>
+                <a 
+                    className="navbar-brand" 
+                    onClick={() => handleNavigateAndScroll("home")} 
+                    style={{ cursor: "pointer" }}
+                >
                     MerchVerse
                 </a>
                 <li className="ms-auto me-2 d-flex align-items-center d-lg-none">
@@ -27,17 +38,29 @@ const Navigation = () => {
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav mx-auto">
                         <li className="nav-item">
-                            <button className="nav-link mx-2 active" onClick={() => scrollToSection("home")} style={{ background: "none", border: "none", cursor: "pointer" }}>
+                            <button 
+                                className="nav-link mx-2 active" 
+                                onClick={() => handleNavigateAndScroll("home")} 
+                                style={{ background: "none", border: "none", cursor: "pointer" }}
+                            >
                                 Home
                             </button>
                         </li>
                         <li className="nav-item">
-                            <button className="nav-link mx-2" onClick={() => scrollToSection("category")} style={{ background: "none", border: "none", cursor: "pointer" }}>
+                            <button 
+                                className="nav-link mx-2" 
+                                onClick={() => handleNavigateAndScroll("category")} 
+                                style={{ background: "none", border: "none", cursor: "pointer" }}
+                            >
                                 Category
                             </button>
                         </li>
                         <li className="nav-item">
-                            <button className="nav-link mx-2" onClick={() => scrollToSection("product")} style={{ background: "none", border: "none", cursor: "pointer" }}>
+                            <button 
+                                className="nav-link mx-2" 
+                                onClick={() => handleNavigateAndScroll("product")} 
+                                style={{ background: "none", border: "none", cursor: "pointer" }}
+                            >
                                 Product
                             </button>
                         </li>
