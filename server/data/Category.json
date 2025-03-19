@@ -1,32 +1,32 @@
 [
     {
         "id" : 1, 
-        "image" : "https://i.postimg.cc/MKvwLYJg/SKINCARE.png",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013.png",
         "description" : "Figurine"
     },
     {
         "id" : 2, 
-        "image" : "https://i.postimg.cc/YSfBFnQL/SMARTPHONE.png",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013%20(1).png",
         "description" : "Manga"
     },
     {
         "id" : 3, 
-        "image" : "https://i.postimg.cc/gcMd4TQv/COMPUTER.png",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013%20(2).png",
         "description" : "Light Novel"
     },
     {
         "id" : 4, 
-        "image" : "https://i.postimg.cc/x1m2fTCR/FASHION.png",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013%20(3).png",
         "description" : "Merch"
     }, 
     {
         "id" : 5, 
-        "image" : "https://i.postimg.cc/hGqqfWQq/SHOES.png",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013%20(4).png",
         "description" : "Plush"
     }, 
     {
         "id" : 6, 
-        "image" : "https://i.postimg.cc/YqZ7Bmp0/ELECTRONICS.png",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013%20(5).png",
         "description" : "Cosplay"
     }
 ]

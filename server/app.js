@@ -17,7 +17,7 @@ app.get('/category', (req, res)=>{
 })
 
 app.get('/product', (req, res)=>{
-    const data = getData('data/Product_Data.json')
+    const data = getData('data/Product.json')
     res.json(data)
 })
 
@@ -36,18 +36,17 @@ const getData= (path) =>{
 }
 
 const findData = (id)=>{
-    const dataProduct = getData('data/Product_Data.json');
+    const dataProduct = getData('data/Product.json');
     const findProduct = dataProduct.find((data)=> data.id == id)
     if(!findProduct){
         let dummy = [{
-            "series_title": "not found",
-            "product_type": "not found",
-            "product_name": "Product not Found",
-            "price": 999999999,
-            "available_quantity": 999999999,
-            "release_date": "2/27/2021",
-            "rating": 0,
-            "id": 9999
+            "id" : 999, 
+            "brand" : "not found", 
+            "description" : "not found", 
+            "price" : 9999,
+            "promo" :9999, 
+            "category" : "not found",
+            "image" : ["https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/Rectangle%205.png"]
         }]
         return dummy
     }

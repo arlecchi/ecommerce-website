@@ -1,7 +1,7 @@
 
 const Navigation = ()=>{
     return(
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
             <div className="container">
                 <a className="navbar-brand" href="#">MerchVerse</a>
                 <li className="ms-auto me-2 d-flex align-items-center d-lg-none">
