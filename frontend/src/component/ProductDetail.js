@@ -1,48 +1,45 @@
-import { useParams } from "react-router-dom";
-import { useContext } from "react";
-import { Context } from "./MyContext";
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Navigation from "./Navigation";  // Import the Navbar
 
 const ProductDetail = () => {
-    const { id } = useParams(); // Get product ID from URL
-    const { product } = useContext(Context);
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const [product, setProduct] = useState(null);
 
-    // Find the product by ID
-    const selectedProduct = product.find((p) => p.id === parseInt(id));
+    useEffect(() => {
+        axios.get(`http://api.localhost:3200/product/${id}`)
+            .then(response => setProduct(response.data))
+            .catch(error => console.error("Error fetching product data:", error));
+    }, [id]);
 
-    if (!selectedProduct) {
-        return <h2 className="text-center mt-4">Product not found</h2>;
+    if (!product) {
+        return <p>Loading...</p>;
     }
 
     return (
-        <div className="container mt-5 product-detail">
-            <div className="row">
-                {/* Left: Product Image */}
-                <div className="col-md-6">
-                    <div className="product-image">
-                        <img src={selectedProduct.image} alt={selectedProduct.brand} className="img-fluid" />
+        <>
+            <Navigation /> {/* Show Navbar */}
+            <div className="container mt-5 pt-5"> {/* Adjusted padding/margin */}
+                <button onClick={() => navigate(-1)} className="back-button">
+                    <i className="bi bi-arrow-left"></i>
+                </button>
+
+                <div className="row mt-3">
+                    <div className="col-md-6">
+                        <img src={product.image[0]} alt={product.brand} className="img-fluid" />
                     </div>
-                </div>
-
-                {/* Right: Product Details */}
-                <div className="col-md-6">
-                    <h1 className="product-title">{selectedProduct.brand}</h1>
-                    <h3 className="product-price">${selectedProduct.price}</h3>
-                    <p className="product-description">{selectedProduct.description}</p>
-
-                    <div className="rating">
-                        <span>⭐ {selectedProduct.rating} / 5.0</span>
-                        <span> ({selectedProduct.reviews} reviews)</span>
+                    <div className="col-md-6">
+                        <h2>{product.brand}</h2>
+                        <p>{product.description}</p>
+                        <h4>Price: ${product.price}</h4>
+                        {product.promo && <h5 className="text-danger">Promo: ${product.promo}</h5>}
+                        <button className="btn btn-primary">Add to Cart</button>
                     </div>
-
-                    <div className="button-group mt-3">
-                        <button className="btn primaryBtn">Add to Cart</button>
-                        <button className="btn secondaryBtn">Wishlist ❤️</button>
-                    </div>
-
-                    <p className="mt-3 shipping-info"><strong>Shipping:</strong> Free 3-5 day shipping • 30-day trial</p>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -321,3 +321,24 @@ html {
   padding: 10px 20px;
   cursor: pointer;
 }
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #121331; /* Dark blue */
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Space between the button and product details */
+}
+
+.back-button i {
+  font-size: 28px; /* Make arrow icon bigger */
+}
+
+.back-button:hover {
+  opacity: 0.7;
+}
+
