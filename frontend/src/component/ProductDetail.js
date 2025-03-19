@@ -7,12 +7,27 @@ const ProductDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [product, setProduct] = useState(null);
+    const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
         axios.get(`http://api.localhost:3200/product/${id}`)
             .then(response => setProduct(response.data))
             .catch(error => console.error("Error fetching product data:", error));
     }, [id]);
+
+    const handleIncrease = () => setQuantity((prev) => Math.min(prev + 1, 10)); // Max 10
+    const handleDecrease = () => setQuantity((prev) => Math.max(prev - 1, 1)); // Min 1
+
+    const handleAddToCart = () => {
+        const cartItem = {
+            id: product.id,
+            name: product.brand,
+            price: product.price,
+            quantity: quantity,
+        };
+        localStorage.setItem("cartItem", JSON.stringify(cartItem));
+        alert("Added to Cart!");
+    };
 
     if (!product) {
         return <p>Loading...</p>;
@@ -44,7 +59,19 @@ const ProductDetail = () => {
                         <div className="productPrice mb-3">${product.price}</div>
                         <div className="productDesc mb-4">{product.description}</div>
                         {product.promo && <h5 className="text-danger mb-3">Promo: ${product.promo}</h5>}
-                        <button className="primaryBtn">Add to Cart</button>
+
+                        {/* Quantity Selector + Add to Cart Button */}
+                        <div className="d-flex align-items-center">
+                            {/* Counter */}
+                            <div className="quantity-selector d-flex align-items-center border rounded px-3 py-2 me-3">
+                                <button onClick={handleDecrease} className="btn btn-sm">−</button>
+                                <span className="mx-3">{quantity}</span>
+                                <button onClick={handleIncrease} className="btn btn-sm">+</button>
+                            </div>
+
+                            {/* Add to Cart */}
+                            <button onClick={handleAddToCart} className="primaryBtn add-to-cart-btn">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>

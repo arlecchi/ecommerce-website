@@ -383,3 +383,20 @@ html {
   font-size: 16px;
   color: var(--BlueColor);
 }
+
+.add-to-cart-btn {
+  background-color: #e91e63; /* Pinkish color */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;  /* Rounded corners */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--SecondaryColor);
+  color: var(--PrimaryAccsent);/* Slightly darker on hover */
+}
