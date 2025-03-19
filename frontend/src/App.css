@@ -118,6 +118,49 @@ body{
   font-size: 30px;
 }
 
+#carouselExample{
+  margin-top: 61px;
+}
+
+.title-wrapper{
+  background-color: var(--PrimaryAccsent);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 4px 10px 10px;
+  gap: 10px;
+  width: 177px;
+  height: 44px; 
+}
+
+.category-label{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 10px;
+  background: var(--SecondaryColor);
+  color: var(--PrimaryAccsent);
+  transition: all ease-in 0.2s;
+}
+
+.card-category{
+  background-color: white;
+  filter: drop-shadow(0px 4px 20px rgba(159,159,159,0.1))
+}
+
+.card-category img {
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Crop the image to fit */
+}
+
+.card-category:hover .category-label{
+  background: var(--PrimaryAccsent);
+  color: var(--SecondaryColor);
+  transition: all ease-in 0.2s;
+}
+
 @media screen and (max-width: 992px){
   .nav-link.nav-link:hover::before{
     width: 6%;
