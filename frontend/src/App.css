@@ -5,6 +5,7 @@
   --SecondaryColor : #FFE4EC;
   --BlackColor : #2C2C2C;
   --Grey : #9C9C9C;
+  --BlueColor : #17183B;
 }
 
 *{
@@ -326,7 +327,7 @@ html {
   background: none;
   border: none;
   font-size: 24px;
-  color: #121331; /* Dark blue */
+  color: var(--BlueColor); /* Dark blue */
   cursor: pointer;
   transition: opacity 0.3s ease;
   display: flex;
@@ -336,9 +337,37 @@ html {
 
 .back-button i {
   font-size: 28px; /* Make arrow icon bigger */
+  font-weight: 500;
 }
 
 .back-button:hover {
   opacity: 0.7;
 }
 
+.breadcrumb-container {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.breadcrumb-category {
+  color: var(--Grey);
+  font-weight: bold;
+}
+
+.breadcrumb-divider {
+  color: var(--BlueColor);
+  font-weight: bold;
+}
+
+.breadcrumb-product {
+  color: var(--BlueColor);
+  font-weight: bold;
+}
+
+.product-name{
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--BlueColor);
+}

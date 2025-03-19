@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navigation from "./Navigation";  // Import the Navbar
+import Navigation from "./Navigation";  
 
 const ProductDetail = () => {
     const { id } = useParams();
@@ -20,22 +20,31 @@ const ProductDetail = () => {
 
     return (
         <>
-            <Navigation /> {/* Show Navbar */}
-            <div className="container mt-5 pt-5"> {/* Adjusted padding/margin */}
+            <Navigation />
+            <div className="container mt-5 pt-5">
+                {/* Back Button */}
                 <button onClick={() => navigate(-1)} className="back-button">
                     <i className="bi bi-arrow-left"></i>
                 </button>
 
+                {/* Breadcrumb */}
+                <nav className="breadcrumb-container align-items-center">
+                    <span className="breadcrumb-category">{product.category}</span>
+                    <span className="breadcrumb-divider"> / </span>
+                    <span className="breadcrumb-product">{product.brand}</span>
+                </nav>
+
+                {/* Product Details */}
                 <div className="row mt-3">
                     <div className="col-md-6">
                         <img src={product.image[0]} alt={product.brand} className="img-fluid" />
                     </div>
-                    <div className="col-md-6">
-                        <h2>{product.brand}</h2>
+                    <div className="col-md-6 ">
+                        <h2 className="product-name">{product.brand}</h2>
                         <p>{product.description}</p>
                         <h4>Price: ${product.price}</h4>
                         {product.promo && <h5 className="text-danger">Promo: ${product.promo}</h5>}
-                        <button className="btn btn-primary">Add to Cart</button>
+                        <button className="primaryBtn">Add to Cart</button>
                     </div>
                 </div>
             </div>
