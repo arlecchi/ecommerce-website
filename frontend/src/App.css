@@ -70,50 +70,45 @@ body{
   border-radius: 50%;
 }
 
-.nav-link.active{
-  color: var(--PrimaryAccsent) !important;
-  font-weight: 500;
+.nav-link {
   position: relative;
+  color: black; /* Default color */
+  transition: color 0.3s ease-in-out;
 }
 
-.nav-link.active::before{
+/* Underline effect only on hover */
+.nav-link:hover::before {
   content: "";
   width: 60%;
   height: 2px;
   background-color: var(--PrimaryAccsent);
-  border-radius: 20;
+  border-radius: 20px;
   position: absolute;
   bottom: 6px;
   left: 8px;
+  transition: all 0.3s ease-in-out;
 }
 
-.nav-link{
-  position: relative;
-}
-
-.nav-link::before{
+/* Remove underline when not hovered */
+.nav-link::before {
   content: "";
   width: 0%;
   height: 2px;
   background-color: var(--PrimaryAccsent);
-  border-radius: 20;
+  border-radius: 20px;
   position: absolute;
   bottom: 6px;
   left: 8px;
   transition: all 0.3s ease-in-out;
 }
 
-.nav-link:hover::before{
-  content: "";
-  width: 60%;
-  height: 2px;
-  background-color: var(--PrimaryAccsent);
-  border-radius: 20;
-  position: absolute;
-  bottom: 6px;
-  left: 8px;
-  transition: all 0.3s ease-in-out;
+/* Make active section text pink */
+.nav-link.active {
+  color: var(--PrimaryAccsent) !important;
+  font-weight: 500;
 }
+
+/* banner section */
 
 .carousel-control-next i, .carousel-control-prev i {
   font-size: 30px;

@@ -1,18 +1,41 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navigation = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const [activeSection, setActiveSection] = useState("");
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ["home", "category", "product"];
+            let currentSection = "";
+            
+            sections.forEach((id) => {
+                const section = document.getElementById(id);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        currentSection = id;
+                    }
+                }
+            });
+
+            setActiveSection(currentSection);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const handleNavigateAndScroll = (sectionId) => {
-        navigate("/"); // Navigate to the homepage first
-        
+        navigate("/");
         setTimeout(() => {
             const section = document.getElementById(sectionId);
             if (section) {
                 section.scrollIntoView({ behavior: "smooth" });
             }
-        }, 100); // Short delay ensures the homepage loads before scrolling
+        }, 100);
     };
 
     return (
@@ -39,7 +62,7 @@ const Navigation = () => {
                     <ul className="navbar-nav mx-auto">
                         <li className="nav-item">
                             <button 
-                                className="nav-link mx-2 active" 
+                                className={`nav-link mx-2 ${activeSection === "home" ? "active" : ""}`} 
                                 onClick={() => handleNavigateAndScroll("home")} 
                                 style={{ background: "none", border: "none", cursor: "pointer" }}
                             >
@@ -48,7 +71,7 @@ const Navigation = () => {
                         </li>
                         <li className="nav-item">
                             <button 
-                                className="nav-link mx-2" 
+                                className={`nav-link mx-2 ${activeSection === "category" ? "active" : ""}`} 
                                 onClick={() => handleNavigateAndScroll("category")} 
                                 style={{ background: "none", border: "none", cursor: "pointer" }}
                             >
@@ -57,7 +80,7 @@ const Navigation = () => {
                         </li>
                         <li className="nav-item">
                             <button 
-                                className="nav-link mx-2" 
+                                className={`nav-link mx-2 ${activeSection === "product" ? "active" : ""}`} 
                                 onClick={() => handleNavigateAndScroll("product")} 
                                 style={{ background: "none", border: "none", cursor: "pointer" }}
                             >
