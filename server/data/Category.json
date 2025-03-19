@@ -1,32 +1,32 @@
 [
     {
         "id" : 1, 
-        "image" : "https://m.media-amazon.com/images/I/51qBrH8n56S.__AC_SX300_SY300_QL70_ML2_.jpg",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013.png",
         "description" : "Figurine"
     },
     {
         "id" : 2, 
-        "image" : "https://m.media-amazon.com/images/I/21Dhsk3t8cL.jpg",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013%20(1).png",
         "description" : "Manga"
     },
     {
         "id" : 3, 
-        "image" : "https://images-fe.ssl-images-amazon.com/images/I/A18nnqeGxlL._AC_UL210_SR210,210_.jpg",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013%20(2).png",
         "description" : "Light Novel"
     },
     {
         "id" : 4, 
-        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/1f6238d678bf0e7822625506cc90df76.png",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013%20(3).png",
         "description" : "Merch"
     }, 
     {
         "id" : 5, 
-        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/738fef5b2869e36ced4d2f5b95eebc41.png",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013%20(4).png",
         "description" : "Plush"
     }, 
     {
         "id" : 6, 
-        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/36781ecf01e97d0bb3b5b3e58d583276.png",
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/image%2013%20(5).png",
         "description" : "Cosplay"
     }
 ]

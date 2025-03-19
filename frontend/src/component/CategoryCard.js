@@ -12,7 +12,7 @@ const CategoryCard= ()=>{
             <div className="row my-4">
                 {category.map((c)=>{
                     return( 
-                        <div className="col-lg-2 col-md-3 col-6 position-relative">
+                        <div key={c.id}className="col-lg-2 col-md-3 col-6 position-relative">
                             <div key={c.id} className="text-center card-category w-100 my-2 my-md-1">
                                 <img src={c.image} className="w-100 "/>
                                 <div className="category-label fw-semibold position-absolute bottom-0 w-100">

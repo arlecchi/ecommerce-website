@@ -2,6 +2,7 @@ import Navigation from "./Navigation";
 import BannerPromotion from "./Banner";
 import { Provider } from "./MyContext";
 import CategoryCard from "./CategoryCard";
+import Product from "./Product";
 
 const HomePage = ()=>{
     return(
@@ -9,6 +10,7 @@ const HomePage = ()=>{
                 <Navigation/>
                 <BannerPromotion/>
                 <CategoryCard/>
+                <Product/>
             </Provider>
     )
 }
