@@ -23,12 +23,12 @@ const ProductDetail = () => {
             <Navigation />
             <div className="container mt-5 pt-5">
                 {/* Back Button */}
-                <button onClick={() => navigate(-1)} className="back-button">
+                <button onClick={() => navigate(-1)} className="back-button mb-3">
                     <i className="bi bi-arrow-left"></i>
                 </button>
 
                 {/* Breadcrumb */}
-                <nav className="breadcrumb-container align-items-center">
+                <nav className="breadcrumb-container align-items-center mb-4">
                     <span className="breadcrumb-category">{product.category}</span>
                     <span className="breadcrumb-divider"> / </span>
                     <span className="breadcrumb-product">{product.brand}</span>
@@ -37,13 +37,13 @@ const ProductDetail = () => {
                 {/* Product Details */}
                 <div className="row mt-3">
                     <div className="col-md-6">
-                        <img src={product.image[0]} alt={product.brand} className="img-fluid" />
+                        <img src={product.image[0]} alt={product.brand} className="img-fluid mb-4" />
                     </div>
-                    <div className="col-md-6 ">
-                        <h2 className="product-name">{product.brand}</h2>
-                        <p>{product.description}</p>
-                        <h4>Price: ${product.price}</h4>
-                        {product.promo && <h5 className="text-danger">Promo: ${product.promo}</h5>}
+                    <div className="col-md-6">
+                        <div className="product-name mb-2">{product.brand}</div>
+                        <div className="productPrice mb-3">${product.price}</div>
+                        <div className="productDesc mb-4">{product.description}</div>
+                        {product.promo && <h5 className="text-danger mb-3">Promo: ${product.promo}</h5>}
                         <button className="primaryBtn">Add to Cart</button>
                     </div>
                 </div>

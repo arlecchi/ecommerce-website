@@ -371,3 +371,15 @@ html {
   font-weight: 700;
   color: var(--BlueColor);
 }
+
+.productPrice{
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--BlueColor);
+}
+
+.productDesc{
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--BlueColor);
+}
