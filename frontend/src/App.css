@@ -133,6 +133,14 @@ body{
   gap: 10px;
   width: 177px;
   height: 44px; 
+  transition: all ease-in 0.2s;
+}
+
+.title-wrapper:hover{
+  background-color: var(--SecondaryColor);
+  color: var(--PrimaryAccsent);
+  transition: all ease-in 0.2s;
+  cursor: pointer;
 }
 
 .category-label{

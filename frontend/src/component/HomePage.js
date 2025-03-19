@@ -1,3 +1,4 @@
+import { useState, useRef } from "react";
 import Navigation from "./Navigation";
 import BannerPromotion from "./Banner";
 import { Provider } from "./MyContext";
@@ -5,6 +6,9 @@ import CategoryCard from "./CategoryCard";
 import Product from "./Product";
 
 const HomePage = () => {
+    const [searchQuery, setSearchQuery] = useState("");
+    const productRef = useRef(null); // Create reference to Product section
+
     return (
         <Provider>
             <Navigation />
@@ -12,10 +16,10 @@ const HomePage = () => {
                 <BannerPromotion />
             </div>
             <div id="category">
-                <CategoryCard />
+                <CategoryCard setSearchQuery={setSearchQuery} productRef={productRef} />
             </div>
-            <div id="product">
-                <Product />
+            <div id="product" ref={productRef}>
+                <Product searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             </div>
         </Provider>
     );

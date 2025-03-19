@@ -1,12 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Context } from "./MyContext";
 import { Link } from "react-router-dom";
 
-const Product = () => {
+const Product = ({ searchQuery, setSearchQuery }) => {
     const { product } = useContext(Context);
-    const [searchQuery, setSearchQuery] = useState("");
 
-    // Filter products based on search query
+    // Filter products based on searchQuery
     const filteredProducts = product.filter((p) =>
         p.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
