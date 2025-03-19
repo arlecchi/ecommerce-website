@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Context } from "./MyContext";
+import { Link } from "react-router-dom";
 
 const Product = () => {
     const { product } = useContext(Context);
@@ -14,20 +15,16 @@ const Product = () => {
 
     return (
         <div className="container">
-            {/* Search Section */}
             <div className="row justify-content-center mb-2">
                 <div className="col-8">
                     <h2 className="text-center tagline mb-4 mt-2">All Products</h2>
                     <div className="input-group">
-                        <form 
-                            className="d-flex w-100"
-                            onSubmit={(e) => e.preventDefault()} // Prevent page reload
-                        >
+                        <form className="d-flex w-100" onSubmit={(e) => e.preventDefault()}>
                             <input 
                                 className="searchInput"
                                 placeholder="Search for a product..."
                                 value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)} // Update state
+                                onChange={(e) => setSearchQuery(e.target.value)}
                             />
                             <button className="primaryBtn" type="submit">Search</button>
                         </form>
@@ -40,20 +37,22 @@ const Product = () => {
                 {filteredProducts.length > 0 ? (
                     filteredProducts.map((p) => (
                         <div className="col-3 my-3" key={p.id}>
-                            <div className="product-card">
-                                <div className="image-wrapper">
-                                    <img src={p.image} alt="product" className="w-100"/>
+                            <Link to={`/product/${p.id}`} className="product-link">
+                                <div className="product-card">
+                                    <div className="image-wrapper">
+                                        <img src={p.image} alt={p.brand} className="w-100"/>
+                                    </div>
+                                    <div>
+                                        <span className="title-category">{p.category}</span>
+                                        <span className="title-brand">{p.brand}</span>
+                                        <span className="title-description">{p.description}</span>
+                                    </div>
+                                    <div className="price-wrapper d-flex justify-content-between align-items-center">
+                                        <span className="title-price">${p.price}</span>
+                                        <button className="sm-btnprimary">Buy <i className="bi bi-bag-plus"></i></button>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span className="title-category">{p.category}</span>
-                                    <span className="title-brand">{p.brand}</span>
-                                    <span className="title-description">{p.description}</span>
-                                </div>
-                                <div className="price-wrapper d-flex justify-content-between align-items-center">
-                                    <span className="title-price">${p.price}</span>
-                                    <button className="sm-btnprimary">Buy <i className="bi bi-bag-plus"></i></button>
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                     ))
                 ) : (
