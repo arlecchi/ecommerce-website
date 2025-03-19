@@ -3,7 +3,7 @@
         "id" : 1, 
         "brand" : "PVC Figure 1/7 Hatsune Miku", 
         "description" : "Announcing a new collaboration figure with “EXIT TUNES PRESENTS ....", 
-        "price" : 2800,
+        "price" :2800,
         "promo" :2520, 
         "category" : "Figurine",
         "image" : ["https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/Rectangle%205.png"]
