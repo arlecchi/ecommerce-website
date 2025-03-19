@@ -353,35 +353,51 @@ html {
 
 .breadcrumb-category {
   color: var(--Grey);
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .breadcrumb-divider {
   color: var(--BlueColor);
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .breadcrumb-product {
   color: var(--BlueColor);
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 14px;
 }
 
-.product-name{
+.product-name {
   font-size: 44px;
   font-weight: 700;
   color: var(--BlueColor);
+  margin-bottom: 12px; /* Added spacing */
 }
 
-.productPrice{
+.productPrice {
   font-weight: 600;
   font-size: 24px;
   color: var(--BlueColor);
+  margin-bottom: 8px;
 }
 
-.productDesc{
+.rating {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffb400; /* Yellow star color */
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.productDesc {
   font-weight: 400;
   font-size: 16px;
   color: var(--BlueColor);
+  line-height: 1.6;
+  margin-bottom: 16px; /* Consistent spacing */
 }
 
 .add-to-cart-btn {
@@ -391,12 +407,67 @@ html {
   padding: 12px 20px;
   font-size: 16px;
   font-weight: bold;
-  border-radius: 8px;  /* Rounded corners */
+  border-radius: 8px; /* Rounded corners */
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .add-to-cart-btn:hover {
   background-color: var(--SecondaryColor);
-  color: var(--PrimaryAccsent);/* Slightly darker on hover */
+  color: var(--PrimaryAccsent); /* Slightly darker on hover */
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 140px;
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.shipping-info {
+  font-size: 16px;
+  font-weight: 100;
+  color: var(--BlueColor);
+  margin-bottom: 12px;
+}
+
+.wishlist-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--PrimaryAccsent);
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.wishlist-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+  margin-top: 5px;
+}
+
+.bi-heart-fill {
+  color: var(--PrimaryAccsent); /* Filled heart */
+}
+
+/* Ensure only the product details page scrolls */
+.product-details-page {
+  min-height: 125vh; /* Makes the page taller for scrolling */
+  overflow-y: auto; /* Enables scrolling */
+  padding-bottom: 50px; /* Extra space at the bottom */
+}
+
+/* Keeps content centered and well-spaced */
+.product-details-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
