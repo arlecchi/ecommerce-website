@@ -45,7 +45,10 @@ const AddressList = ({ onSelectAddress }) => {
           <p className="contact"><strong>Contact -</strong> {addr.contact}</p>
         </div>
       ))}
-      <div className="add-address">➕ Add New Address</div>
+      <div className="add-address d-flex align-items-center mt-3">
+        <span className="add-icon me-2">+</span>
+        <span>Add Address</span>
+      </div>
     </div>
   );  
 };
