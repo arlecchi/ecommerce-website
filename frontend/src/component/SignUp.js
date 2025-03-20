@@ -28,7 +28,6 @@ const SignUp = () => {
 
     return (
         <div className="create-account-card" style={{ background: "#FF0073" }}>
-            <Navigation />
             <div className="div">
                 <div className="image" />
                 <div className="create-an-account">
