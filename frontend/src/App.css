@@ -1229,6 +1229,7 @@ html {
   position: relative;
   white-space: nowrap;
   width: 294px;
+  left:-2px;
 }
 
 .login-card .frame-2 {
