@@ -104,7 +104,7 @@ const Navigation = () => {
 
                     <div className="d-flex btnWrapper mt-lg-0 mt-5">
                         <button className="w-100 secondaryBtn" onClick={() => navigate("/sign-up")}>Sign Up</button>
-                        <button className="w-100 primaryBtn">Login</button>
+                        <button className="w-100 primaryBtn" onClick={() => navigate("/login")}>Login</button>
                     </div>
                 </div>
             </div>

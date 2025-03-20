@@ -7,6 +7,7 @@ import SignUp from "./component/SignUp";
 import './App.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./component/Login";
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/sign-up" element={<SignUp />} />
+                <Route path="/login" element={<Login />} />
             </Routes>
         </Router>
     );

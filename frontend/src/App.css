@@ -1011,3 +1011,189 @@ html {
 .create-account-card .have-an-account-3 {
   font-size: 11px !important;
 }
+
+.login-card {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-card .div {
+  background-color: #ffffff;
+  height: 507px;
+  position: relative;
+  width: 1089px;
+}
+
+.login-card .image {
+  background-size: 100% 100%;
+  height: 507px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 558px;
+}
+
+.login-card .create-an-account {
+  height: 486px;
+  left: 558px;
+  overflow: hidden;
+  position: absolute;
+  top: 21px;
+  width: 531px;
+}
+
+.login-card .logo {
+  background-color: #c4c4c4;
+  border-radius: 20px;
+  height: 40px;
+  left: 575px;
+  position: absolute;
+  top: 24px;
+  width: 40px;
+}
+
+.login-card .content {
+  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 9px;
+  left: 34px;
+  position: absolute;
+  top: 112px;
+}
+
+.login-card .div-wrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  height: 40px;
+  justify-content: center;
+  position: relative;
+}
+
+.login-card .text-wrapper-3 {
+  color: #ff0072;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 31px;
+  font-weight: 500;
+  height: 23px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  white-space: nowrap;
+  width: 294px;
+}
+
+.login-card .frame-2 {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  width: 387px;
+}
+
+.login-card .text-field {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  width: 387px;
+}
+
+.login-card .frame-3 {
+  align-self: stretch;
+  height: 23px;
+  position: relative;
+  width: 100%;
+}
+
+.login-card .label {
+  background: transparent;
+  border: none;
+  color: #666666;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  padding: 0;
+  position: absolute;
+  top: -1px;
+}
+
+.login-card .text-field-2 {
+  align-self: stretch;
+  border: 1px solid;
+  border-color: #66666659;
+  border-radius: 12px;
+  height: 35px;
+  position: relative;
+  width: 100%;
+}
+
+.login-card .label-2 {
+  color: #666666;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: -1px;
+}
+
+.login-card .password-hide-and {
+  height: 24px !important;
+  left: 358px !important;
+  position: absolute !important;
+  top: -1px !important;
+  width: 24px !important;
+}
+
+.login-card .frame-4 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.login-card .button-instance {
+  background-color: var(--primary-accsent) !important;
+  border-radius: 32px !important;
+  height: 46px !important;
+  position: relative !important;
+  width: 209px !important;
+}
+
+.login-card .design-component-instance-node {
+  left: 82px !important;
+  top: 10px !important;
+}
+
+.login-card .button-2 {
+  color: #ffe4ec !important;
+  font-size: 17px !important;
+}
+
+.login-card .have-an-account-login {
+  flex: 0 0 auto !important;
+}
+
+.login-card .have-an-account-instance {
+  font-size: 11px !important;
+}
+
+.login-card .have-an-account-login-instance {
+  color: #ff0072 !important;
+}

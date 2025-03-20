@@ -46,7 +46,7 @@ const Login = () => {
                     <div className="logo"/>
                     <div className="content">
                         <div className="frame-2">
-                            <div className="text-wrapper-3">Create an account</div>
+                            <div className="text-wrapper-3">Login</div>
                             <p className="text-center mt-3">
                                 Already have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/login")} >Login</span>
                             </p>
@@ -59,36 +59,18 @@ const Login = () => {
                                 </div>
                                 {error && <div className="alert alert-danger">{error}</div>}
                                 
-                                <div className="text-field">
-                                    <label className="frame-4">Email Address</label>
-                                    <input className="text-field-2" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                                </div>
 
                                 <div className="text-field">
                                     <label className="frame-4">Password</label>
                                     <input className="text-field-2" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                                     <p className="error-message">
-                                        Use 8 or more characters with a mix of letters, numbers &amp; symbols
+                                    Don’t have an account?
                                     </p>
                                 </div>
 
-                                <div className="text-field">
-                                    <label className="frame-4">Confirm Password</label>
-                                    <input className="text-field-2" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
-                                </div>
                                 
-                                <div className="not-a-robot-checkbox">
-                                    <label htmlFor="notRobot" className="text-wrapper-7">I’m not a robot
-                                    <input
-                                        type="checkbox"
-                                        id="notRobot"
-                                        checked={isRobotChecked}
-                                        onChange={(e) => setIsRobotChecked(e.target.checked)}
-                                    />
-                                    </label>
-                                </div>
                                 
-                                <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+                                <button type="submit" className="btn btn-primary w-100">Login</button>
                             </form>
                         </div>
                     </div>
