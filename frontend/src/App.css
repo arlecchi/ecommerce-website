@@ -40,6 +40,7 @@ body{
   font-size: 14px;
   line-height: 21px;
   min-width: 100px;
+  transition: background 0.3s ease;
 }
 
 .secondaryBtn{
@@ -56,6 +57,7 @@ body{
   font-size: 14px;
   line-height: 21px;
   min-width: 100px;
+  transition: background 0.3s ease;
 }
 
 .btnWrapper{
@@ -1350,6 +1352,18 @@ html {
   border-radius: 25px; /* Rounded corners */
   cursor: pointer;
   transition: background 0.3s ease;
+}
+
+
+.secondaryBtn:hover {
+  background-color: var(--PrimaryAccsent);
+  color: var(--SecondaryColor); /* Slightly darker on hover */
+}
+
+
+.primaryBtn:hover {
+  background-color: var(--SecondaryColor);
+  color: var(--PrimaryAccsent); /* Slightly darker on hover */
 }
 
 .sign-btn:hover {
