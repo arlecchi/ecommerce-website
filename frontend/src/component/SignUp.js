@@ -37,47 +37,50 @@ const SignUp = () => {
             <div className="div">
                 <div className="image" />
                 <div className="create-an-account">
-                <form onSubmit={handleSignUp}>
-                    {error && <div className="alert alert-danger">{error}</div>}
-                    
-                    <div className="mb-3">
-                        <label className="form-label">Email Address</label>
-                        <input 
-                            type="email" 
-                            className="form-control" 
-                            value={email} 
-                            onChange={(e) => setEmail(e.target.value)} 
-                            required 
-                        />
+                    <div className="logo"/>
+                    <div className="content">
+                    <form onSubmit={handleSignUp}>
+                            {error && <div className="alert alert-danger">{error}</div>}
+                            
+                            <div className="mb-3">
+                                <label className="form-label">Email Address</label>
+                                <input 
+                                    type="email" 
+                                    className="form-control" 
+                                    value={email} 
+                                    onChange={(e) => setEmail(e.target.value)} 
+                                    required 
+                                />
+                            </div>
+                            
+                            <div className="mb-3">
+                                <label className="form-label">Password</label>
+                                <input 
+                                    type="password" 
+                                    className="form-control" 
+                                    value={password} 
+                                    onChange={(e) => setPassword(e.target.value)} 
+                                    required 
+                                />
+                            </div>
+                            
+                            <div className="mb-3">
+                                <label className="form-label">Confirm Password</label>
+                                <input 
+                                    type="password" 
+                                    className="form-control" 
+                                    value={confirmPassword} 
+                                    onChange={(e) => setConfirmPassword(e.target.value)} 
+                                    required 
+                                />
+                            </div>
+                            
+                            <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+                            <p className="text-center mt-3">
+                                Already have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/login")} >Login</span>
+                            </p>
+                        </form>
                     </div>
-                    
-                    <div className="mb-3">
-                        <label className="form-label">Password</label>
-                        <input 
-                            type="password" 
-                            className="form-control" 
-                            value={password} 
-                            onChange={(e) => setPassword(e.target.value)} 
-                            required 
-                        />
-                    </div>
-                    
-                    <div className="mb-3">
-                        <label className="form-label">Confirm Password</label>
-                        <input 
-                            type="password" 
-                            className="form-control" 
-                            value={confirmPassword} 
-                            onChange={(e) => setConfirmPassword(e.target.value)} 
-                            required 
-                        />
-                    </div>
-                    
-                    <button type="submit" className="btn btn-primary w-100">Sign Up</button>
-                    <p className="text-center mt-3">
-                        Already have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/login")} >Login</span>
-                    </p>
-                </form>
                 </div>
             </div>
         </div>
