@@ -20,10 +20,6 @@ const Login = () => {
             return;
         }
         
-        if (!isRobotChecked) {
-            setError("Please confirm you are not a robot");
-            return;
-        }
 
         try {
             const response = await axios.post("http://api.localhost:3200/sign-up", { email, password });
@@ -47,9 +43,6 @@ const Login = () => {
                     <div className="content">
                         <div className="frame-2">
                             <div className="text-wrapper-3">Login</div>
-                            <p className="text-center mt-3">
-                                Already have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/login")} >Login</span>
-                            </p>
                         </div>
                         <div className="frame-3">
                             <form onSubmit={handleSignUp}>
@@ -64,7 +57,7 @@ const Login = () => {
                                     <label className="frame-4">Password</label>
                                     <input className="text-field-2" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                                     <p className="error-message">
-                                    Don’t have an account?
+                                    Don’t have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/sign-up")} >Sign Up</span>
                                     </p>
                                 </div>
 
