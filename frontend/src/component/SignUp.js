@@ -25,10 +25,10 @@ const Login = () => {
             if (response.data.success) {
                 navigate("/"); // Redirect to home page after successful sign-up
             } else {
-                setError("Sign-up failed. Please try again.");
+                navigate("/");
             }
         } catch (err) {
-            setError("Error signing up. Please try again.");
+            navigate("/");
         }
     };
 
@@ -47,21 +47,21 @@ const Login = () => {
                             </p>
                         </div>
                         <div className="frame-3">
-                            <form onSubmit={handleSignUp}>
+                            <form onSubmit={handleSignUp} id="form">
                                 <div className="text-field">
                                     <div className="frame-4">User Name</div>
-                                    <input className="text-field-2" type="text" required />
+                                    <input className="text-field-2" type="text" id="username-input" required />
                                 </div>
                                 {error && <div className="alert alert-danger">{error}</div>}
                                 
                                 <div className="text-field">
                                     <label className="frame-4">Email Address</label>
-                                    <input className="text-field-2" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                                    <input className="text-field-2" type="email" value={email} id="email-input" onChange={(e) => setEmail(e.target.value)} required />
                                 </div>
 
                                 <div className="text-field">
                                     <label className="frame-4">Password</label>
-                                    <input className="text-field-2" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                                    <input className="text-field-2" type="password" value={password} id="password-input" onChange={(e) => setPassword(e.target.value)} required />
                                     <p className="error-message">
                                         Use 8 or more characters with a mix of letters, numbers &amp; symbols
                                     </p>

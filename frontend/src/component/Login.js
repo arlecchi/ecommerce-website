@@ -17,14 +17,14 @@ const Login = () => {
         
 
         try {
-            const response = await axios.post("http://api.localhost:3200/sign-up", { email, password });
+            const response = await axios.post("http://api.localhost:3200/login", { email, password });
             if (response.data.success) {
                 navigate("/"); // Redirect to home page after successful sign-up
             } else {
-                setError("Sign-up failed. Please try again.");
+                navigate("/");
             }
         } catch (err) {
-            setError("Error signing up. Please try again.");
+            navigate("/");
         }
     };
 
