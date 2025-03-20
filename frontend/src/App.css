@@ -468,6 +468,10 @@ html {
   padding-bottom: 50px; /* Extra space at the bottom */
 }
 
+.cart-page {
+  padding-top: 40px; /* Adjust based on your navbar height */
+}
+
 /* Keeps content centered and well-spaced */
 .product-details-container {
   max-width: 1200px;
