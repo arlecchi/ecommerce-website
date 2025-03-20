@@ -25,9 +25,11 @@ const Login = () => {
             if (response.data.success) {
                 navigate("/"); // Redirect to home page after successful sign-up
             } else {
+                setError("Sign-up failed. Please try again.");
                 navigate("/");
             }
         } catch (err) {
+            setError("Error signing up. Please try again.");
             navigate("/");
         }
     };
