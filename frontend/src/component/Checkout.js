@@ -10,6 +10,7 @@ const Checkout = () => {
     const [shippingInfo, setShippingInfo] = useState({ name: "", address: "" });
     const [selectedShipment, setSelectedShipment] = useState("free");
     const [selectedPayment, setSelectedPayment] = useState(null);
+    const [estimatedDelivery, setEstimatedDelivery] = useState("01 Apr, 2025");
 
     useEffect(() => {
         const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -20,20 +21,15 @@ const Checkout = () => {
     const discount = subtotal * 0.1;
     const shipping = selectedShipment === "priority" ? 8.5 : 0;
     const total = subtotal - discount + shipping;
-
-    const handleInputChange = (e) => {
-        setShippingInfo({ ...shippingInfo, [e.target.name]: e.target.value });
+ 
+    const estimatedDates = {
+        free: "01 Apr, 2025",
+        priority: "28 Mar, 2025",
+        schedule: "Select Date",
     };
+    const selectedDate = estimatedDates[selectedShipment];
 
-    const handlePlaceOrder = () => {
-        alert("Order placed successfully!");
-        localStorage.removeItem("cart");
-        navigate("/");
-    };
-
-    const handleStepChange = (newStep) => {
-        setStep(newStep);
-    };
+    const handleStepChange = (newStep) => setStep(newStep);
 
     const handleAddressSelect = (selectedAddress) => {
         setShippingInfo({
@@ -42,8 +38,14 @@ const Checkout = () => {
         });
     };
 
+    const handlePlaceOrder = () => {
+        alert("Order placed successfully!");
+        localStorage.removeItem("cart");
+        navigate("/");
+    };
+
     return (
-        <div className="checkout-page container mt-5 pt-5">
+        <div className="checkout-page container mt-5">
             <Navigation />
             <h2 className="mb-4"><strong>Checkout</strong></h2>
 
@@ -66,6 +68,7 @@ const Checkout = () => {
                             <span className={`step-text ${step === 3 ? "active-step" : "inactive-step"}`} 
                                 onClick={() => handleStepChange(3)}>Payment</span>
                         </div>
+
                         {/* Address Selection Step */}
                         {step === 1 && (
                             <div>
@@ -79,33 +82,41 @@ const Checkout = () => {
                             <div>
                                 <h4 className="mt-4">Shipment Method</h4>
                                 <div className="shipment-method border p-3 rounded">
-                                    <div className="shipment-option">
-                                        <input type="radio" id="free" name="shipment" value="free"
+                                    {/* Free Shipping */}
+                                    <label className={`shipment-option ${selectedShipment === "free" ? "selected" : ""}`}>
+                                        <input type="radio" name="shipment" value="free"
                                             checked={selectedShipment === "free"}
                                             onChange={() => setSelectedShipment("free")} />
-                                        <label htmlFor="free">
-                                            <strong>Free</strong> Regular Shipment <span className="float-end">01 Apr, 2025</span>
-                                        </label>
-                                    </div>
+                                        <span className="radio-circle"></span>
+                                        <div className="shipment-info">
+                                            <strong>Free</strong> <span className="text-muted">Regular Shipment</span>
+                                        </div>
+                                        <span className="shipment-date">{estimatedDates["free"]}</span>
+                                    </label>
 
-                                    <div className="shipment-option">
-                                        <input type="radio" id="priority" name="shipment" value="priority"
+                                    {/* Priority Shipping */}
+                                    <label className={`shipment-option ${selectedShipment === "priority" ? "selected" : ""}`}>
+                                        <input type="radio" name="shipment" value="priority"
                                             checked={selectedShipment === "priority"}
                                             onChange={() => setSelectedShipment("priority")} />
-                                        <label htmlFor="priority">
-                                            <strong>$8.50</strong> Priority Shipping <span className="float-end">28 Mar, 2025</span>
-                                        </label>
-                                    </div>
+                                        <span className="radio-circle"></span>
+                                        <div className="shipment-info">
+                                            <strong>$8.50</strong> <span className="text-muted">Priority Shipping</span>
+                                        </div>
+                                        <span className="shipment-date">{estimatedDates["priority"]}</span>
+                                    </label>
 
-                                    <div className="shipment-option">
-                                        <input type="radio" id="schedule" name="shipment" value="schedule"
+                                    {/* Schedule Delivery */}
+                                    <label className={`shipment-option ${selectedShipment === "schedule" ? "selected" : ""}`}>
+                                        <input type="radio" name="shipment" value="schedule"
                                             checked={selectedShipment === "schedule"}
                                             onChange={() => setSelectedShipment("schedule")} />
-                                        <label htmlFor="schedule">
-                                            <strong>Schedule</strong> Choose a date that works for you.
-                                            <span className="float-end text-muted">Select Date ▼</span>
-                                        </label>
-                                    </div>
+                                        <span className="radio-circle"></span>
+                                        <div className="shipment-info">
+                                            <strong>Schedule</strong> <span className="text-muted">Choose a date that works for you.</span>
+                                        </div>
+                                        <span className="shipment-date">Select Date ▼</span>
+                                    </label>
                                 </div>
                             </div>
                         )}
@@ -147,7 +158,7 @@ const Checkout = () => {
                             <p>Coupon Applied <span className="float-end">$0.00</span></p>
                             <hr />
                             <h5><strong>Total <span className="float-end">${total.toFixed(2)}</span></strong></h5>
-                            <p className="text-muted">Estimated Delivery by <strong>01 Apr, 2025</strong></p>
+                            <p className="text-muted">Estimated Delivery by <strong>{selectedDate}</strong></p>
 
                             {/* Coupon Code Input */}
                             <input type="text" className="form-control mb-3" placeholder="Coupon Code" />
