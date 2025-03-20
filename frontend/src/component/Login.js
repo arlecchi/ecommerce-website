@@ -39,6 +39,9 @@ const Login = () => {
                         <div className="frame-2">
                             <div className="text-wrapper-3">Login</div>
                         </div>
+                        <div className="frame-2">
+                            <div className="text-wrapper-3"></div>
+                        </div>
                         <div className="frame-3">
                             <form onSubmit={handleSignUp}>
                                 <div className="text-field">

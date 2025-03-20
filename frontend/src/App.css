@@ -1063,7 +1063,7 @@ html {
   text-decoration: underline;
 }
 
-.create-account-card .not-a-robot-checkbox {
+.login-card .not-a-robot-checkbox {
   background-color: #ffffff;
   border: 1px solid;
   border-color: #ff0072;
@@ -1089,10 +1089,12 @@ html {
   width: 18px !important;
 }
 
-.create-account-card .text-wrapper-7 {
+.login-card .text-wrapper-7 {
   color: #ff0072;
   font-family: "Poppins-Light", Helvetica;
-  font-size: 11px;
+  top:8px;
+  font-size: 15px;
+  left:10px;
   font-weight: 300;
   letter-spacing: 0;
   line-height: normal;
@@ -1382,4 +1384,11 @@ html {
   height: 18px !important;
   position: relative !important;
   width: 18px !important;
+}
+
+.login-card .frame-5 {
+  align-self: stretch;
+  height: 10px;
+  position: relative;
+  width: 100%;
 }
