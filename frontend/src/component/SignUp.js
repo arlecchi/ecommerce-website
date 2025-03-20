@@ -35,7 +35,8 @@ const SignUp = () => {
         <div className="create-account-card" style={{ background: "#FF0073" }}>
             <Navigation />
             <div className="div">
-                
+                <div className="image" />
+                <div className="create-an-account">
                 <form onSubmit={handleSignUp}>
                     {error && <div className="alert alert-danger">{error}</div>}
                     
@@ -74,9 +75,10 @@ const SignUp = () => {
                     
                     <button type="submit" className="btn btn-primary w-100">Sign Up</button>
                     <p className="text-center mt-3">
-                        Already have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/sign-in")} >Sign In</span>
+                        Already have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/login")} >Login</span>
                     </p>
                 </form>
+                </div>
             </div>
         </div>
     );
