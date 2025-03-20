@@ -575,6 +575,10 @@ html {
   margin-bottom: 20px;
 }
 
+.deliveryTime{
+  margin-bottom: 20px;
+}
+
 .create-account-card {
   background-color: #ffffff;
   display: flex;
