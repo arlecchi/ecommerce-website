@@ -42,7 +42,11 @@ const Cart = () => {
     return (
         <div className="cart-page container mt-5">
             <Navigation />
-            <h2 className="mb-4"><strong>Cart</strong> <span className="text-muted">{cart.length} ITEM</span></h2>
+            <h2 className="mb-4">
+                <strong>Cart</strong> 
+                <span className="text-muted"> {cart.reduce((acc, item) => acc + item.count, 0)} ITEM</span>
+            </h2>
+
 
             {cart.length === 0 ? (
                 <p>Your cart is empty.</p>
