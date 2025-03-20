@@ -7,18 +7,13 @@ const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
-    const [isRobotChecked, setIsRobotChecked] = useState(false);
 
     const handleSignUp = async (e) => {
         e.preventDefault();
         setError("");
         
-        if (password !== confirmPassword) {
-            setError("Passwords do not match");
-            return;
-        }
+
         
 
         try {
@@ -56,7 +51,7 @@ const Login = () => {
                                 <div className="text-field">
                                     <label className="frame-4">Password</label>
                                     <input className="text-field-2" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                                    <p className="error-message">
+                                    <p className="description">
                                     Don’t have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/sign-up")} >Sign Up</span>
                                     </p>
                                 </div>

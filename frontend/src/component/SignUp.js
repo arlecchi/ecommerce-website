@@ -42,7 +42,7 @@ const Login = () => {
                     <div className="content">
                         <div className="frame-2">
                             <div className="text-wrapper-3">Create an account</div>
-                            <p className="text-center mt-3">
+                            <p className="description">
                                 Already have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/login")} >Login</span>
                             </p>
                         </div>
@@ -71,6 +71,7 @@ const Login = () => {
                                 <div className="not-a-robot-checkbox">
                                     <label htmlFor="notRobot" className="text-wrapper-7">I’m not a robot
                                     <input
+                                    className="check-box"
                                         type="checkbox"
                                         id="notRobot"
                                         checked={isRobotChecked}
