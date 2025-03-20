@@ -429,6 +429,7 @@ html {
   padding: 6px 12px;
   border-radius: 8px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .shipping-info {
@@ -569,3 +570,7 @@ html {
   top: 20px; /* Keeps it in place when scrolling */
 }
 
+.totalCost{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

@@ -104,9 +104,9 @@ const Cart = () => {
 
                             <hr className="my-4" />
 
-                            <h5 className="mb-8"><strong>Total <span className="float-end">${total.toFixed(2)}</span></strong></h5>
+                            <h5 className="mb-8 mt-8 totalCost"><strong>Total <span className="float-end">${total.toFixed(2)}</span></strong></h5>
 
-                            <p className="mb-8">Estimated Delivery by <strong>01 Apr, 2025</strong></p>
+                            <p className="mb-8 mt-8 totalCost">Estimated Delivery by <strong>01 Apr, 2025</strong></p>
 
                             {/* Coupon Code Input */}
                             <input type="text" className="form-control mb-4" placeholder="Coupon Code" />

@@ -85,19 +85,20 @@ const ProductDetail = () => {
                         {product.promo && <h5 className="text-danger mb-4">Special Price: ${product.promo}</h5>}
 
                         {/* Quantity Selector + Add to Cart Button */}
-                        <div className="d-flex align-items-center mb-4">
-                            <div className="quantity-selector d-flex align-items-center border rounded px-4 py-2 me-4">
-                                <button onClick={handleDecrease} className="btn btn-sm">−</button>
-                                <span className="mx-4">{quantity}</span>
-                                <button onClick={handleIncrease} className="btn btn-sm">+</button>
-                            </div>
-
-                            {/* Add to Cart */}
-                            <button onClick={handleAddToCart} className="primaryBtn add-to-cart-btn px-4 py-2">
-                                Add to Cart
-                            </button>
+                        <div className="d-flex align-items-center gap-3 mb-4">
+                        {/* Quantity Selector */}
+                        <div className="quantity-selector d-flex align-items-center border rounded px-3 py-2" style={{ height: "40px" }}>
+                            <button onClick={handleDecrease} className="btn btn-sm p-2">−</button>
+                            <span className="mx-3">{quantity}</span>
+                            <button onClick={handleIncrease} className="btn btn-sm p-2">+</button>
                         </div>
 
+                        {/* Add to Cart Button */}
+                        <button onClick={handleAddToCart} className="primaryBtn add-to-cart-btn px-4 py-2 d-flex align-items-center justify-content-center" style={{ height: "40px", display: "flex", alignItems: "center" }}>
+                            Add to Cart
+                        </button>
+                    </div>
+                    
                         {/* Shipping Info */}
                         <p className="shipping-info mb-4">
                             <strong>Free 3-5 day shipping</strong> • <strong>30-day trial</strong>
