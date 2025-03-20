@@ -1,95 +1,100 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Navigation from "./Navigation";
 
-const CartPage = () => {
-  const [cart, setCart] = useState([]);
+const Cart = () => {
+    const navigate = useNavigate();
+    const [cart, setCart] = useState([]);
 
-  // Load cart data from localStorage
-  useEffect(() => {
-    const cartItem = JSON.parse(localStorage.getItem("cartItem")) || [];
-    setCart(cartItem);
-  }, []);
+    useEffect(() => {
+        const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+        setCart(storedCart);
+    }, []);
 
-  // Update localStorage whenever cart changes
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+    const handleRemoveItem = (id) => {
+        const updatedCart = cart.filter(item => item.id !== id);
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+    };
 
-  // Increase quantity
-  const increaseQuantity = (index) => {
-    const updatedCart = [...cart];
-    updatedCart[index].count += 1;
-    setCart(updatedCart);
-  };
+    const handleIncrease = (id) => {
+        const updatedCart = cart.map(item =>
+            item.id === id ? { ...item, count: Math.min(item.count + 1, 10) } : item
+        );
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+    };
 
-  // Decrease quantity (min 1)
-  const decreaseQuantity = (index) => {
-    const updatedCart = [...cart];
-    if (updatedCart[index].count > 1) {
-      updatedCart[index].count -= 1;
-      setCart(updatedCart);
-    }
-  };
+    const handleDecrease = (id) => {
+        const updatedCart = cart.map(item =>
+            item.id === id ? { ...item, count: Math.max(item.count - 1, 1) } : item
+        );
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+    };
 
-  // Remove item from cart
-  const removeFromCart = (index) => {
-    const updatedCart = cart.filter((_, i) => i !== index);
-    setCart(updatedCart);
-  };
+    // Calculate price breakdown
+    const subtotal = cart.reduce((acc, item) => acc + item.price * item.count, 0);
+    const discount = subtotal * 0.1; // 10% discount
+    const shipping = subtotal > 150 ? 0 : 10;
+    const total = subtotal - discount + shipping;
 
-  // Calculate total price
-  const totalPrice = cart.reduce((total, item) => total + item.count * item.price, 0);
-  const discount = totalPrice * 0.1; // Example discount (10%)
-  const finalPrice = totalPrice - discount;
+    return (
+        <div className="cart-page container mt-5">
+            <Navigation />
+            <h2 className="mb-4"><strong>Cart</strong> <span className="text-muted">{cart.length} ITEM</span></h2>
 
-  return (
-    <div className="p-6 md:p-10 lg:p-16 bg-white min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">
-        Cart <span className="text-gray-500 text-sm">{cart.length} ITEM(S)</span>
-      </h1>
+            {cart.length === 0 ? (
+                <p>Your cart is empty.</p>
+            ) : (
+                <div className="cart-container d-flex justify-content-between">
+                    {/* Left Section: Cart Items + Discount Banner */}
+                    <div className="left-section col-md-8">
+                        {cart.map((item) => (
+                            <div key={item.id} className="cart-item d-flex align-items-center border p-3 mb-3">
+                                <img src={item.image} alt={item.name} className="cart-image me-3" style={{ width: "80px", height: "80px" }} />
+                                <div className="cart-details flex-grow-1">
+                                    <h5>{item.name}</h5>
+                                    <p className="fw-bold">${item.price}</p>
+                                    <div className="d-flex align-items-center">
+                                        <button className="btn btn-light border px-2" onClick={() => handleDecrease(item.id)}>−</button>
+                                        <span className="mx-3">{item.count}</span>
+                                        <button className="btn btn-light border px-2" onClick={() => handleIncrease(item.id)}>+</button>
+                                        <button className="btn btn-link text-danger ms-3" onClick={() => handleRemoveItem(item.id)}>Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {/* Cart Items */}
-        <div className="md:col-span-2 bg-gray-100 p-6 rounded-lg">
-          {cart.length === 0 ? (
-            <p className="text-center text-gray-600">Your cart is empty.</p>
-          ) : (
-            cart.map((item, index) => (
-              <div key={index} className="flex items-center gap-4 border-b pb-4 mb-4">
-                <img src={item.image} alt={item.name} className="w-24 h-24 object-cover" />
-                <div className="flex-1">
-                  <h2 className="text-lg font-semibold">{item.name}</h2>
-                  <p className="text-xl font-bold">${item.price.toLocaleString()}</p>
-                  <div className="flex items-center mt-2">
-                    <button className="px-3 py-1 border" onClick={() => decreaseQuantity(index)}>-</button>
-                    <span className="px-4">{item.count}</span>
-                    <button className="px-3 py-1 border" onClick={() => increaseQuantity(index)}>+</button>
-                    <button className="text-red-500 ml-4" onClick={() => removeFromCart(index)}>Remove</button>
-                  </div>
+                        {/* Discount Banner */}
+                        <div className="discount-banner p-3 mt-3">
+                            <i className="bi bi-percent"></i> 10% Instant Discount with Federal Bank Debit Cards on a min spend of $150. TCA
+                        </div>
+                    </div>
+
+                    {/* Right Section: Order Summary */}
+                    <div className="right-section col-md-4">
+                        <div className="border p-4">
+                            <h4 className="mb-4"><strong>Order Summary</strong></h4>
+                            <p>Price <span className="float-end">${subtotal.toFixed(2)}</span></p>
+                            <p>Discount <span className="float-end text-success">-${discount.toFixed(2)}</span></p>
+                            <p>Shipping <span className="float-end">{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</span></p>
+                            <p>Coupon Applied <span className="float-end">$0.00</span></p>
+                            <hr />
+                            <h5><strong>Total <span className="float-end">${total.toFixed(2)}</span></strong></h5>
+                            <p className="text-muted">Estimated Delivery by <strong>01 Apr, 2025</strong></p>
+
+                            {/* Coupon Code Input */}
+                            <input type="text" className="form-control mb-3" placeholder="Coupon Code" />
+
+                            {/* Checkout Button */}
+                            <button className="primaryBtn w-100">Proceed to Checkout</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            ))
-          )}
+            )}
         </div>
-
-        {/* Order Summary */}
-        <div className="bg-gray-100 p-6 rounded-lg">
-          <h2 className="text-lg font-bold mb-4">Order Summary</h2>
-          <div className="space-y-2">
-            <div className="flex justify-between"><span>Price</span><span>${totalPrice.toLocaleString()}</span></div>
-            <div className="flex justify-between"><span>Discount</span><span>${discount.toLocaleString()}</span></div>
-            <div className="flex justify-between"><span>Shipping</span><span className="text-red-500">Free</span></div>
-            <div className="border-t pt-2 flex justify-between font-bold"><span>Total</span><span>${finalPrice.toLocaleString()}</span></div>
-          </div>
-          <button className="mt-4 w-full bg-pink-500 text-white py-2 rounded">Proceed to Checkout</button>
-        </div>
-      </div>
-
-      {/* Offer Banner */}
-      <div className="mt-6 bg-pink-100 text-pink-600 p-4 rounded flex items-center">
-        <span className="mr-2">💳</span> 10% Instant Discount with Federal Bank Debit Cards on a min spend of $150. TCA
-      </div>
-    </div>
-  );
+    );
 };
 
-export default CartPage;
+export default Cart;
