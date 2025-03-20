@@ -468,9 +468,100 @@ html {
   padding-bottom: 50px; /* Extra space at the bottom */
 }
 
+
+
+
+
+.cart-page {
+  padding-top: 40px; /* Adjust based on your navbar height */
+}
+
 /* Keeps content centered and well-spaced */
 .product-details-container {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+}
+
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.left-section {
+  flex: 2;
+}
+
+.right-section {
+  flex: 1;
+}
+
+.discount-banner {
+  background-color: var(--SecondaryColor);
+  border: 2px solid var(--PrimaryAccsent);
+  color: var(--BlackColor);
+  font-weight: 400;
+  padding: 12px 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  width: fit-content;
+  margin-top: 20px;
+}
+
+.discount-banner i {
+  color: var(--PrimaryAccsent);
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distributes elements properly */
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Ensures it takes up remaining space */
+}
+
+.cart-item-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cart-item-price {
+  font-weight: bold;
+  white-space: nowrap; /* Prevents price from wrapping */
+  margin-left: 20px; /* Adds spacing between name and price */
+}
+
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Left Section: Scrollable Cart Items */
+.left-section {
+  flex: 2;
+  max-height: 500px; /* Adjust height as needed */
+  overflow-y: auto;
+  padding-right: 10px; /* Prevents scrollbar from overlapping content */
+}
+
+/* Right Section: Fixed Order Summary */
+.right-section {
+  flex: 1;
+  position: sticky;
+  top: 20px; /* Keeps it in place when scrolling */
 }

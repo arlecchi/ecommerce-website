@@ -24,12 +24,28 @@ const ProductDetail = () => {
             id: product.id,
             name: product.brand,
             price: product.price,
-            quantity: quantity,
+            image: product.image[0], // Ensure the image is stored
+            count: quantity, // Use 'count' instead of 'quantity' for consistency
         };
-        localStorage.setItem("cartItem", JSON.stringify(cartItem));
+    
+        // Get current cart from localStorage
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+        // Check if the item is already in the cart
+        const existingItemIndex = cart.findIndex(item => item.id === cartItem.id);
+        if (existingItemIndex !== -1) {
+            // Update quantity if item already exists
+            cart[existingItemIndex].count += quantity;
+        } else {
+            // Add new item if it doesn't exist
+            cart.push(cartItem);
+        }
+    
+        // Save updated cart to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
         alert("Added to Cart!");
     };
-
+    
     const toggleWishlist = () => {
         setWishlist(!wishlist);
     };
