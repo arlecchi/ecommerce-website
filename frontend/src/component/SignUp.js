@@ -39,47 +39,70 @@ const SignUp = () => {
                 <div className="create-an-account">
                     <div className="logo"/>
                     <div className="content">
-                    <form onSubmit={handleSignUp}>
-                            {error && <div className="alert alert-danger">{error}</div>}
-                            
-                            <div className="mb-3">
-                                <label className="form-label">Email Address</label>
-                                <input 
-                                    type="email" 
-                                    className="form-control" 
-                                    value={email} 
-                                    onChange={(e) => setEmail(e.target.value)} 
-                                    required 
-                                />
-                            </div>
-                            
-                            <div className="mb-3">
-                                <label className="form-label">Password</label>
-                                <input 
-                                    type="password" 
-                                    className="form-control" 
-                                    value={password} 
-                                    onChange={(e) => setPassword(e.target.value)} 
-                                    required 
-                                />
-                            </div>
-                            
-                            <div className="mb-3">
-                                <label className="form-label">Confirm Password</label>
-                                <input 
-                                    type="password" 
-                                    className="form-control" 
-                                    value={confirmPassword} 
-                                    onChange={(e) => setConfirmPassword(e.target.value)} 
-                                    required 
-                                />
-                            </div>
-                            
-                            <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+                        <div className="frame-2">
+                            <div className="text-wrapper-3">Create an account</div>
                             <p className="text-center mt-3">
                                 Already have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/login")} >Login</span>
                             </p>
-                        </form>
+                        </div>
+                        <div className="frame-3">
+                            <form onSubmit={handleSignUp}>
+
+                                <div className="text-field">
+                                    <div className="frame-4">User Name
+                                    </div>
+                                        <input className="text-field-2"
+  
+                                            type="text"
+                                            required
+                                        />
+                                </div>
+                                {error && <div className="alert alert-danger">{error}</div>}
+                                
+                                <div className="text-field">
+                                    <label className="frame-4">Email Address</label>
+
+                                    <input className="text-field-2"
+                                        type="email" 
+                                        value={email} 
+                                        onChange={(e) => setEmail(e.target.value)} 
+                                        required 
+                                    />
+                                </div>
+
+                                <div className="text-field">
+                                    <label className="frame-4">Password</label>
+
+                                    <input className="text-field-2"
+                                        type="password" 
+
+                                        value={password} 
+                                        onChange={(e) => setPassword(e.target.value)} 
+                                        required 
+                                    />
+                                    <p className="error-message">
+                                    Use 8 or more characters with a mix of letters, numbers &amp;
+                                    symbols
+                                    </p>
+                                </div>
+
+                                <div className="text-field">
+                                    <label className="frame-4">Confirm Password</label>
+
+                                    <input className="text-field-2"
+                                        type="password" 
+                                        
+                                        value={confirmPassword} 
+                                        onChange={(e) => setConfirmPassword(e.target.value)} 
+                                        required 
+                                    />
+                                </div>
+
+                                
+                                <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
