@@ -544,7 +544,7 @@ html {
   margin-left: 20px; /* Adds spacing between name and price */
 }
 
-.cart-container {
+.checkout-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -565,3 +565,130 @@ html {
   position: sticky;
   top: 20px; /* Keeps it in place when scrolling */
 }
+.step-text {
+  font-weight: 500;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.step-text:hover {
+  color: #555;
+}
+
+.active-step {
+  font-weight: 700;
+  color: black;
+}
+.step-navigation {
+  display: flex;
+  justify-content: flex-start; 
+  gap: 20px; 
+  margin-top: 10px; 
+}
+
+.step-text {
+  font-size: 16px;
+  font-weight: normal;
+  color: gray;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.active-step {
+  font-weight: bold;
+  color: black;
+}
+
+.step-separator {
+  margin: 0 15px; /* Adjust spacing between steps */
+  color: gray;
+}
+
+.address-container {
+  max-width: 500px;
+  margin-left: 0px;
+}
+
+.address-card {
+  border: 2px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.selected {
+  border-color: var(--PrimaryAccsent);
+}
+
+.address-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.radio {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 4px;
+  color: white;
+}
+
+.home {
+  background: #ff0055;
+}
+
+.office {
+  background: #ff7b00;
+}
+
+.address {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.contact {
+  font-size: 14px;
+  color: #333;
+  margin-top: 2px;
+}
+
+.address-actions {
+  text-align: right;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.edit {
+  color: #333;
+  cursor: pointer;
+}
+
+.remove {
+  color: var(--PrimaryAccsent);
+  cursor: pointer;
+}
+
+.add-address {
+  color: var(--PrimaryAccsent);
+  font-weight: normal;
+  cursor: pointer;
+  margin-top: 10px;
+  text-align: left;
+}
+
+
