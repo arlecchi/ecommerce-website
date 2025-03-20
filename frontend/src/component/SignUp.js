@@ -79,7 +79,7 @@ const Login = () => {
                                     </label>
                                 </div>
                                 
-                                <button type="submit" className="primaryBtn add-to-cart-btn px-4 py-2">Sign Up</button>
+                                <button type="submit" className="primaryBtn sign-btn px-4 py-2">Create an Account</button>
                             </form>
                         </div>
                     </div>

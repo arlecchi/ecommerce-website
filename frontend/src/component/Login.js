@@ -63,7 +63,7 @@ const Login = () => {
 
                                 
                                 
-                                <button type="submit" className="primaryBtn add-to-cart-btn px-4 py-2">Login</button>
+                                <button type="submit" className="primaryBtn sign-btn px-4 py-2">Login</button>
                             </form>
                         </div>
                     </div>

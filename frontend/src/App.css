@@ -1157,6 +1157,7 @@ html {
 
 .login-card .div {
   background-color: #ffffff;
+  border-radius: 25px;
   top: 100px;
   height: 507px;
   position: relative;
@@ -1168,6 +1169,7 @@ html {
   background-image: url(https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/ANIME%20PINK.jpg);
   background-size: 100% 100%;
   height: 507px;
+  border-radius: 25px 0 0 25px;
   left: 0;
   position: absolute;
   top: 0;
@@ -1336,3 +1338,19 @@ html {
   color: #ff0072 !important;
 }
 
+.sign-btn {
+  background-color: #e91e63; /* Pinkish color */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sign-btn:hover {
+  background-color: var(--SecondaryColor);
+  color: var(--PrimaryAccsent); /* Slightly darker on hover */
+}
