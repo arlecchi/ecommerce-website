@@ -25,7 +25,7 @@ const Checkout = () => {
     const estimatedDates = {
         free: "01 Apr, 2025",
         priority: "28 Mar, 2025",
-        schedule: "Select Date ▼",
+        schedule: "Select Date",
     };
     const selectedDate = estimatedDates[selectedShipment];
 
@@ -115,7 +115,7 @@ const Checkout = () => {
                                         <div className="shipment-info">
                                             <strong>Schedule</strong> <span className="text-muted">Choose a date that works for you.</span>
                                         </div>
-                                        <span className="shipment-date">Select Date</span>
+                                        <span className="shipment-date">Select Date ▼</span>
                                     </label>
                                 </div>
                             </div>
