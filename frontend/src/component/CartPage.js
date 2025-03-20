@@ -52,49 +52,55 @@ const Cart = () => {
                 <p>Your cart is empty.</p>
             ) : (
                 <div className="cart-container d-flex justify-content-between">
-                    {/* Left Section: Cart Items + Discount Banner */}
-                    <div className="left-section col-md-8">
-                        {cart.map((item) => (
-                            <div key={item.id} className="cart-item d-flex align-items-center p-3 mb-3">
-                                <img src={item.image} alt={item.name} className="cart-image me-3" style={{ width: "80px", height: "80px" }} />
-                                <div className="cart-details flex-grow-1">
-                                    <h5>{item.name}</h5>
-                                    <p className="fw-bold">${item.price}</p>
-                                    <div className="d-flex align-items-center">
-                                        <button className="btn btn-light border px-2" onClick={() => handleDecrease(item.id)}>−</button>
-                                        <span className="mx-3">{item.count}</span>
-                                        <button className="btn btn-light border px-2" onClick={() => handleIncrease(item.id)}>+</button>
-                                        <button className="btn btn-link text-danger ms-3" onClick={() => handleRemoveItem(item.id)}>Remove</button>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                  {/* Left Section: Cart Items + Discount Banner */}
+                  <div className="left-section col-md-8">
+                      <div className="cart-items-container">
+                          {cart.map((item) => (
+                              <div key={item.id} className="cart-item d-flex align-items-center p-3 mb-3">
+                                  <img src={item.image} alt={item.name} className="cart-image me-3" style={{ width: "80px", height: "80px" }} />
+                                  <div className="cart-details flex-grow-1">
+                                      <h5>{item.name}</h5>
+                                      <p className="fw-bold">${item.price}</p>
+                                      <div className="d-flex align-items-center">
+                                          <button className="btn btn-light border px-2" onClick={() => handleDecrease(item.id)}>−</button>
+                                          <span className="mx-3">{item.count}</span>
+                                          <button className="btn btn-light border px-2" onClick={() => handleIncrease(item.id)}>+</button>
+                                          <button className="btn btn-link text-danger ms-3" onClick={() => handleRemoveItem(item.id)}>Remove</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          ))}
+                      </div>
 
-                        {/* Discount Banner */}
-                        <div className="discount-banner p-3 mt-3">
-                            <i className="bi bi-percent"></i> 10% Instant Discount with Federal Bank Debit Cards on a min spend of $150. TCA
-                        </div>
-                    </div>
-
+                      {/* Stationary Discount Banner */}
+                      <div className="discount-banner mt-3">
+                          <i className="bi bi-percent"></i> 10% Instant Discount with Federal Bank Debit Cards on a min spend of $150. TCA
+                      </div>
+                  </div>
+                  
                     {/* Right Section: Order Summary */}
                     <div className="right-section col-md-4">
-                        <div className="border p-4">
-                            <h4 className="mb-4"><strong>Order Summary</strong></h4>
-                            <p>Price <span className="float-end">${subtotal.toFixed(2)}</span></p>
-                            <p>Discount <span className="float-end text-success">-${discount.toFixed(2)}</span></p>
-                            <p>Shipping <span className="float-end">{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</span></p>
-                            <p>Coupon Applied <span className="float-end">$0.00</span></p>
-                            <hr />
-                            <h5><strong>Total <span className="float-end">${total.toFixed(2)}</span></strong></h5>
-                            <p className="text-muted">Estimated Delivery by <strong>01 Apr, 2025</strong></p>
+                      <div className="border p-4">
+                          <h4 className="mb-4"><strong>Order Summary</strong></h4>
 
-                            {/* Coupon Code Input */}
-                            <input type="text" className="form-control mb-3" placeholder="Coupon Code" />
+                          <p className="mb-3">Price <span className="float-end">${subtotal.toFixed(2)}</span></p>
+                          <p className="mb-3">Discount <span className="float-end text-success">-${discount.toFixed(2)}</span></p>
+                          <p className="mb-3">Shipping <span className="float-end">{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</span></p>
+                          <p className="mb-4">Coupon Applied <span className="float-end">$0.00</span></p>
 
-                            {/* Checkout Button */}
-                            <button className="primaryBtn w-100">Proceed to Checkout</button>
-                        </div>
-                    </div>
+                          <hr className="my-4" />
+
+                          <h5 className="mb-8"><strong>Total <span className="float-end">${total.toFixed(2)}</span></strong></h5>
+
+                          <p className="mb-8">Estimated Delivery by <strong>01 Apr, 2025</strong></p>
+
+                          {/* Coupon Code Input */}
+                          <input type="text" className="form-control mb-4" placeholder="Coupon Code" />
+
+                          {/* Checkout Button */}
+                          <button className="primaryBtn w-100">Proceed to Checkout</button>
+                      </div>
+                  </div>
                 </div>
             )}
         </div>

@@ -510,6 +510,9 @@ html {
   font-size: 16px;
   width: fit-content;
   margin-top: 20px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10
 }
 
 .discount-banner i {
@@ -565,3 +568,4 @@ html {
   position: sticky;
   top: 20px; /* Keeps it in place when scrolling */
 }
+
