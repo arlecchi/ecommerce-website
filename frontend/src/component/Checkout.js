@@ -25,7 +25,7 @@ const Checkout = () => {
     const estimatedDates = {
         free: "01 Apr, 2025",
         priority: "28 Mar, 2025",
-        schedule: "Select Date",
+        schedule: "Select Date ▼",
     };
     const selectedDate = estimatedDates[selectedShipment];
 
@@ -115,7 +115,7 @@ const Checkout = () => {
                                         <div className="shipment-info">
                                             <strong>Schedule</strong> <span className="text-muted">Choose a date that works for you.</span>
                                         </div>
-                                        <span className="shipment-date">Select Date ▼</span>
+                                        <span className="shipment-date">Select Date</span>
                                     </label>
                                 </div>
                             </div>
@@ -125,27 +125,46 @@ const Checkout = () => {
                         {step === 3 && (
                             <div>
                                 <h4 className="mt-4">Payment Method</h4>
-                                <div className="payment-method">
-                                    <div className="payment-option">
-                                        <input type="radio" id="card1" name="payment" value="card1"
-                                            checked={selectedPayment === "card1"}
-                                            onChange={() => setSelectedPayment("card1")} />
-                                        <label htmlFor="card1">
-                                            <strong>**** 6754</strong> (Expires 06/2026)
-                                        </label>
-                                    </div>
+                                <div className="payment-method border rounded p-3">
+                                    {/* Card 1 */}
+                                    <label className={`payment-option d-flex align-items-center justify-content-between p-3 ${selectedPayment === "card1" ? "selected" : ""}`}>
+                                        <div className="d-flex align-items-center">
+                                            <input type="radio" id="card1" name="payment" value="card1"
+                                                checked={selectedPayment === "card1"}
+                                                onChange={() => setSelectedPayment("card1")}
+                                                className="d-none" />
+                                            <span className="custom-radio me-2">{selectedPayment === "card1" && <span className="inner-dot"></span>}</span>
+                                            <img src="https://raw.githubusercontent.com/arlecchi/image-hosting/main/Logo-visa-icon-PNG.png" alt="Visa" className="payment-icon me-2" />
+                                            <strong>•••• 6754</strong>
+                                        </div>
+                                        <span className="text-muted">Expires 06/2026</span>
+                                        <span className="remove-payment text-danger">Remove</span>
+                                    </label>
 
-                                    <div className="payment-option">
-                                        <input type="radio" id="card2" name="payment" value="card2"
-                                            checked={selectedPayment === "card2"}
-                                            onChange={() => setSelectedPayment("card2")} />
-                                        <label htmlFor="card2">
-                                            <strong>**** 5643</strong> (Expires 11/2028)
-                                        </label>
-                                    </div>
+                                    {/* Card 2 */}
+                                    <label className={`payment-option d-flex align-items-center justify-content-between p-3 ${selectedPayment === "card2" ? "selected" : ""}`}>
+                                        <div className="d-flex align-items-center">
+                                            <input type="radio" id="card2" name="payment" value="card2"
+                                                checked={selectedPayment === "card2"}
+                                                onChange={() => setSelectedPayment("card2")}
+                                                className="d-none" />
+                                            <span className="custom-radio me-2">{selectedPayment === "card2" && <span className="inner-dot"></span>}</span>
+                                            <img src="https://raw.githubusercontent.com/arlecchi/image-hosting/main/MasterCardIcon.png" alt="MasterCard" className="payment-icon me-2" />
+                                            <strong>•••• 5643</strong>
+                                        </div>
+                                        <span className="text-muted">Expires 11/2028</span>
+                                        <span className="remove-payment text-danger">Remove</span>
+                                    </label>
+                                </div>
+
+                                {/* Add Payment Method */}
+                                <div className="add-payment d-flex align-items-center mt-3">
+                                    <span className="add-icon me-2">+</span> 
+                                    <span>Add Payment Method</span>
                                 </div>
                             </div>
                         )}
+
                     </div>
 
                     {/* Right Section: Order Summary */}
