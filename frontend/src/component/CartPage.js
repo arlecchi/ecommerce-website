@@ -51,7 +51,7 @@ const Cart = () => {
                     {/* Left Section: Cart Items + Discount Banner */}
                     <div className="left-section col-md-8">
                         {cart.map((item) => (
-                            <div key={item.id} className="cart-item d-flex align-items-center border p-3 mb-3">
+                            <div key={item.id} className="cart-item d-flex align-items-center p-3 mb-3">
                                 <img src={item.image} alt={item.name} className="cart-image me-3" style={{ width: "80px", height: "80px" }} />
                                 <div className="cart-details flex-grow-1">
                                     <h5>{item.name}</h5>
