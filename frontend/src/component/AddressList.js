@@ -30,10 +30,15 @@ const AddressList = ({ onSelectAddress }) => {
       {addresses.map((addr) => (
         <div key={addr.id} className={`address-card ${selectedAddress === addr.id ? "selected" : ""}`}>
           <div className="address-header">
-            <span className="radio" onClick={() => handleSelect(addr)}>
-              {selectedAddress === addr.id ? "🔴" : "⚪"}
-            </span>
-            <span className="name">{addr.name}</span>
+            <input
+              type="radio"
+              id={`address-${addr.id}`}
+              name="address"
+              className="radio"
+              checked={selectedAddress === addr.id}
+              onChange={() => handleSelect(addr)}
+            />
+            <label htmlFor={`address-${addr.id}`} className="name">{addr.name}</label>
             <span className={`tag ${addr.type.toLowerCase()}`}>{addr.type}</span>
           </div>
           <p className="address">{addr.address}</p>
@@ -42,7 +47,7 @@ const AddressList = ({ onSelectAddress }) => {
       ))}
       <div className="add-address">➕ Add New Address</div>
     </div>
-  );
+  );  
 };
 
 export default AddressList;
