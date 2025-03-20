@@ -88,7 +88,9 @@ const Cart = () => {
                             <input type="text" className="form-control mb-3" placeholder="Coupon Code" />
 
                             {/* Checkout Button */}
-                            <button className="primaryBtn w-100">Proceed to Checkout</button>
+                            <button className="primaryBtn w-100" onClick={() => navigate("/checkout")}>
+                                Proceed to Checkout
+                            </button>
                         </div>
                     </div>
                 </div>
