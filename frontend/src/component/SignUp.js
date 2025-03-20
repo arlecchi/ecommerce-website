@@ -28,6 +28,7 @@ const SignUp = () => {
 
     return (
         <div className="create-account-card" style={{ background: "#FF0073" }}>
+            <Navigation />
             <div className="div">
                 <div className="image" />
                 <div className="create-an-account">
@@ -87,7 +88,7 @@ const SignUp = () => {
                                     </div>
                                 </div>
                                 
-                                <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+                                <button type="submit" className="button-instance">Create an Account</button>
 
                             </form>
                         </div>
