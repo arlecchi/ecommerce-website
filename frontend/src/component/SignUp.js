@@ -7,18 +7,13 @@ const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
     const [isRobotChecked, setIsRobotChecked] = useState(false);
 
     const handleSignUp = async (e) => {
         e.preventDefault();
         setError("");
-        
-        if (password !== confirmPassword) {
-            setError("Passwords do not match");
-            return;
-        }
+
         
         if (!isRobotChecked) {
             setError("Please confirm you are not a robot");
@@ -38,9 +33,9 @@ const Login = () => {
     };
 
     return (
-        <div className="login-card" style={{ background: "#FF0073" }}>
+        <div className="login-card">
             <Navigation />
-            <div className="div">
+            <div className="div" >
                 <div className="image" />
                 <div className="create-an-account">
                     <div className="logo"/>
@@ -72,10 +67,6 @@ const Login = () => {
                                     </p>
                                 </div>
 
-                                <div className="text-field">
-                                    <label className="frame-4">Confirm Password</label>
-                                    <input className="text-field-2" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
-                                </div>
                                 
                                 <div className="not-a-robot-checkbox">
                                     <label htmlFor="notRobot" className="text-wrapper-7">I’m not a robot
@@ -88,7 +79,7 @@ const Login = () => {
                                     </label>
                                 </div>
                                 
-                                <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+                                <button type="submit" className="primaryBtn add-to-cart-btn px-4 py-2">Sign Up</button>
                             </form>
                         </div>
                     </div>

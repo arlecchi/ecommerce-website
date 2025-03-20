@@ -38,7 +38,7 @@ const Login = () => {
     };
 
     return (
-        <div className="login-card" style={{ background: "#FF0073" }}>
+        <div className="login-card" >
             <Navigation />
             <div className="div">
                 <div className="image" />
@@ -70,7 +70,7 @@ const Login = () => {
 
                                 
                                 
-                                <button type="submit" className="btn btn-primary w-100">Login</button>
+                                <button type="submit" className="primaryBtn add-to-cart-btn px-4 py-2">Login</button>
                             </form>
                         </div>
                     </div>
