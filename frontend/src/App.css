@@ -419,6 +419,8 @@ html {
   border-radius: 8px; /* Rounded corners */
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .add-to-cart-btn:hover {
@@ -435,6 +437,7 @@ html {
   padding: 6px 12px;
   border-radius: 8px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .shipping-info {
@@ -1133,3 +1136,4 @@ html {
   position: relative;
   width: 100%;
 }
+

@@ -21,7 +21,7 @@ const Checkout = () => {
     const discount = subtotal * 0.1;
     const shipping = selectedShipment === "priority" ? 8.5 : 0;
     const total = subtotal - discount + shipping;
- 
+
     const estimatedDates = {
         free: "01 Apr, 2025",
         priority: "28 Mar, 2025",
