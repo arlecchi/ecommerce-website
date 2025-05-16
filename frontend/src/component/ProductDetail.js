@@ -1,125 +1,122 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Navigation from "./Navigation";
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Navigation from "./Navigation";  
 
-const Cart = () => {
+const ProductDetail = () => {
+    const { id } = useParams();
     const navigate = useNavigate();
-    const [cart, setCart] = useState([]);
+    const [product, setProduct] = useState(null);
+    const [quantity, setQuantity] = useState(1);
+    const [wishlist, setWishlist] = useState(false);
 
     useEffect(() => {
-        const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-        setCart(storedCart);
-    }, []);
+        axios.get(`http://api.localhost:3200/product/${id}`)
+            .then(response => {
+                setProduct(response.data);
 
-    const handleRemoveItem = (id) => {
-        const updatedCart = cart.filter(item => item.id !== id);
-        setCart(updatedCart);
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
+                // Load wishlist state from localStorage
+                const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+                setWishlist(savedWishlist.includes(response.data.id));
+            })
+            .catch(error => console.error("Error fetching product data:", error));
+    }, [id]);
+
+    const handleIncrease = () => setQuantity((prev) => Math.min(prev + 1, 10)); 
+    const handleDecrease = () => setQuantity((prev) => Math.max(prev - 1, 1));
+
+    const handleAddToCart = () => {
+        const cartItem = {
+            id: product.id,
+            name: product.brand,
+            price: product.price,
+            image: product.image[0], 
+            count: quantity, 
+        };
+    
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+        const existingItemIndex = cart.findIndex(item => item.id === cartItem.id);
+        if (existingItemIndex !== -1) {
+            cart[existingItemIndex].count += quantity;
+        } else {
+            cart.push(cartItem);
+        }
+    
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Added to Cart!");
+    };
+    
+    const toggleWishlist = () => {
+        const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+        
+        if (wishlist) {
+            // Remove item from wishlist
+            const updatedWishlist = savedWishlist.filter(itemId => itemId !== product.id);
+            localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+        } else {
+            // Add item to wishlist
+            savedWishlist.push(product.id);
+            localStorage.setItem("wishlist", JSON.stringify(savedWishlist));
+        }
+
+        setWishlist(!wishlist);
     };
 
-    const handleIncrease = (id) => {
-        const updatedCart = cart.map(item =>
-            item.id === id ? { ...item, count: Math.min(item.count + 1, 10) } : item
-        );
-        setCart(updatedCart);
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
-    };
-
-    const handleDecrease = (id) => {
-        const updatedCart = cart.map(item =>
-            item.id === id ? { ...item, count: Math.max(item.count - 1, 1) } : item
-        );
-        setCart(updatedCart);
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
-    };
-
-    // Calculate price breakdown
-    const subtotal = cart.reduce((acc, item) => acc + item.price * item.count, 0);
-    const discount = subtotal * 0.1; // 10% discount
-    const shipping = subtotal > 150 ? 0 : 10;
-    const total = subtotal - discount + shipping;
+    if (!product) {
+        return <p>Loading...</p>;
+    }
 
     return (
-        <div className="cart-page container mt-5">
+        <div className="product-details-page product-details-container">
             <Navigation />
-            <h2 className="mb-4">
-                <strong>Cart</strong> 
-                <span className="text-muted"> {cart.reduce((acc, item) => acc + item.count, 0)} ITEM(S)</span>
-            </h2>
+            <div className="container mt-5 pt-5">
+                <button onClick={() => navigate(-1)} className="back-button mb-4">
+                    <i className="bi bi-arrow-left"></i>
+                </button>
 
-            {cart.length === 0 ? (
-                <p>Your cart is empty.</p>
-            ) : (
-            <div className="cart-container d-flex align-items-stretch">
-                {/* Left Section: Cart Items + Discount Banner */}
-                <div className="left-section col-md-8 d-flex flex-column">
-                    <div className="cart-items-container">
-                        {cart.map((item) => (
-                            <div key={item.id} className="cart-item d-flex align-items-center p-3 mb-3">
-                                {/* Clickable Image */}
-                                <Link to={`/product/${item.id}`}>
-                                    <img 
-                                        src={item.image} 
-                                        alt={item.name} 
-                                        className="cart-image me-3" 
-                                        style={{ width: "80px", height: "80px", cursor: "pointer" }} 
-                                    />
-                                </Link>
+                <nav className="breadcrumb-container align-items-center mb-4">
+                    <span className="breadcrumb-category">{product.category}</span>
+                    <span className="breadcrumb-divider"> / </span>
+                    <span className="breadcrumb-product">{product.brand}</span>
+                </nav>
 
-                                <div className="cart-details flex-grow-1">
-                                    {/* Clickable Product Name */}
-                                    <h5>
-                                        <Link to={`/product/${item.id}`} className="text-dark text-decoration-none">
-                                            {item.name}
-                                        </Link>
-                                    </h5>
+                <div className="row mt-3 flex-row-reverse">
+                    <div className="col-md-6 d-flex justify-content-center">
+                        <img src={product.image[0]} alt={product.brand} className="img-fluid product-image" />
+                    </div>
 
-                                    <p className="fw-bold">${item.price}</p>
-                                    <div className="d-flex align-items-center">
-                                        <button className="btn btn-light border px-2" onClick={() => handleDecrease(item.id)}>−</button>
-                                        <span className="mx-3">{item.count}</span>
-                                        <button className="btn btn-light border px-2" onClick={() => handleIncrease(item.id)}>+</button>
-                                        <button className="btn btn-link text-danger ms-3" onClick={() => handleRemoveItem(item.id)}>Remove</button>
-                                    </div>
-                                </div>
+                    <div className="col-md-6">
+                        <div className="product-name mb-4">{product.brand}</div>
+                        <div className="productPrice mb-4 fs-4 fw-bold">${product.price}</div>
+                        <div className="productDesc mb-4">{product.description}</div>
+                        {product.promo && <h5 className="text-danger mb-4">Special Price: ${product.promo}</h5>}
+
+                        <div className="d-flex align-items-center mb-4">
+                            <div className="quantity-selector d-flex align-items-center border rounded px-4 py-2 me-4">
+                                <button onClick={handleDecrease} className="btn btn-sm">−</button>
+                                <span className="mx-4">{quantity}</span>
+                                <button onClick={handleIncrease} className="btn btn-sm">+</button>
                             </div>
-                        ))}
-                    </div>
 
-                    {/* Discount Banner - Always aligned with the bottom of Order Summary */}
-                    <div className="discount-banner p-3 border rounded text-danger bg-light mt-auto">
-                        <i className="bi bi-percent"></i> 10% Instant Discount with Federal Bank Debit Cards on a min spend of $150. TCA
-                    </div>
-                </div>
+                            <button onClick={handleAddToCart} className="primaryBtn add-to-cart-btn px-4 py-2">
+                                Add to Cart
+                            </button>
+                        </div>
 
-                {/* Right Section: Order Summary */}
-                <div className="right-section col-md-4">
-                    <div className="border p-4">
-                        <h4 className="mb-4"><strong>Order Summary</strong></h4>
+                        <p className="shipping-info mb-4">
+                            <strong>Free 3-5 day shipping</strong> • <strong>30-day trial</strong>
+                        </p>
 
-                        <p className="mb-3">Price <span className="float-end">${subtotal.toFixed(2)}</span></p>
-                        <p className="mb-3">Discount <span className="float-end text-success">-${discount.toFixed(2)}</span></p>
-                        <p className="mb-3">Shipping <span className="float-end">{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</span></p>
-                        <p className="mb-4">Coupon Applied <span className="float-end">$0.00</span></p>
-
-                        <hr className="my-4" />
-
-                        <h5 className="mb-3"><strong>Total <span className="float-end">${total.toFixed(2)}</span></strong></h5>
-
-                        <p className="mb-3">Estimated Delivery by <strong>01 Apr, 2025</strong></p>
-
-                        {/* Coupon Code Input */}
-                        <input type="text" className="form-control mb-4" placeholder="Coupon Code" />
-
-                        {/* Checkout Button */}
-                        <button className="primaryBtn w-100">Proceed to Checkout</button>
+                        <button className="wishlist-btn mt-3" onClick={toggleWishlist}>
+                            <i className={`bi ${wishlist ? "bi-heart-fill text-danger" : "bi-heart"} wishlist-icon`}></i>
+                            {wishlist ? "Remove from Wishlist" : "Add to Wishlist"}
+                        </button>
                     </div>
                 </div>
             </div>
-
-            )}
         </div>
     );
 };
 
-export default Cart;
+export default ProductDetail;

@@ -3,19 +3,20 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navigation from "./Navigation";
 
-const SignUp = () => {
+const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
+    const [isRobotChecked, setIsRobotChecked] = useState(false);
 
     const handleSignUp = async (e) => {
         e.preventDefault();
         setError("");
+
         
-        if (password !== confirmPassword) {
-            setError("Passwords do not match");
+        if (!isRobotChecked) {
+            setError("Please confirm you are not a robot");
             return;
         }
 
@@ -25,61 +26,65 @@ const SignUp = () => {
                 navigate("/"); // Redirect to home page after successful sign-up
             } else {
                 setError("Sign-up failed. Please try again.");
+                navigate("/");
             }
         } catch (err) {
             setError("Error signing up. Please try again.");
+            navigate("/");
         }
     };
 
     return (
-        <div className="create-account-card" style={{ background: "#FF0073" }}>
+        <div className="login-card">
             <Navigation />
-            <div className="div">
+            <div className="div" >
                 <div className="image" />
                 <div className="create-an-account">
                     <div className="logo"/>
                     <div className="content">
-                    <form onSubmit={handleSignUp}>
-                            {error && <div className="alert alert-danger">{error}</div>}
-                            
-                            <div className="mb-3">
-                                <label className="form-label">Email Address</label>
-                                <input 
-                                    type="email" 
-                                    className="form-control" 
-                                    value={email} 
-                                    onChange={(e) => setEmail(e.target.value)} 
-                                    required 
-                                />
-                            </div>
-                            
-                            <div className="mb-3">
-                                <label className="form-label">Password</label>
-                                <input 
-                                    type="password" 
-                                    className="form-control" 
-                                    value={password} 
-                                    onChange={(e) => setPassword(e.target.value)} 
-                                    required 
-                                />
-                            </div>
-                            
-                            <div className="mb-3">
-                                <label className="form-label">Confirm Password</label>
-                                <input 
-                                    type="password" 
-                                    className="form-control" 
-                                    value={confirmPassword} 
-                                    onChange={(e) => setConfirmPassword(e.target.value)} 
-                                    required 
-                                />
-                            </div>
-                            
-                            <button type="submit" className="btn btn-primary w-100">Sign Up</button>
-                            <p className="text-center mt-3">
+                        <div className="frame-2">
+                            <div className="text-wrapper-3">Create an account</div>
+                            <p className="description">
                                 Already have an account? <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => navigate("/login")} >Login</span>
                             </p>
-                        </form>
+                        </div>
+                        <div className="frame-3">
+                            <form onSubmit={handleSignUp} id="form">
+                                <div className="text-field">
+                                    <div className="frame-4">User Name</div>
+                                    <input className="text-field-2" type="text" id="username-input" required />
+                                </div>
+                                {error && <div className="alert alert-danger">{error}</div>}
+                                
+                                <div className="text-field">
+                                    <label className="frame-4">Email Address</label>
+                                    <input className="text-field-2" type="email" value={email} id="email-input" onChange={(e) => setEmail(e.target.value)} required />
+                                </div>
+
+                                <div className="text-field">
+                                    <label className="frame-4">Password</label>
+                                    <input className="text-field-2" type="password" value={password} id="password-input" onChange={(e) => setPassword(e.target.value)} required />
+                                    <p className="error-message">
+                                        Use 8 or more characters with a mix of letters, numbers &amp; symbols
+                                    </p>
+                                </div>
+
+                                
+                                <div className="not-a-robot-checkbox">
+                                    <label htmlFor="notRobot" className="text-wrapper-7">I’m not a robot
+                                    <input
+                                    className="check-box"
+                                        type="checkbox"
+                                        id="notRobot"
+                                        checked={isRobotChecked}
+                                        onChange={(e) => setIsRobotChecked(e.target.checked)}
+                                    />
+                                    </label>
+                                </div>
+                                <div className="frame-5"></div>
+                                <button type="submit" className="primaryBtn sign-btn px-4 py-2">Create an Account</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,4 +92,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default Login;

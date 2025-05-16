@@ -12,6 +12,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body{
   background-color: #FAFBFC;
 } 
@@ -36,6 +40,7 @@ body{
   font-size: 14px;
   line-height: 21px;
   min-width: 100px;
+  transition: background 0.3s ease;
 }
 
 .secondaryBtn{
@@ -52,6 +57,7 @@ body{
   font-size: 14px;
   line-height: 21px;
   min-width: 100px;
+  transition: background 0.3s ease;
 }
 
 .btnWrapper{
@@ -413,6 +419,8 @@ html {
   border-radius: 8px; /* Rounded corners */
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .add-to-cart-btn:hover {
@@ -485,18 +493,11 @@ html {
 }
 
 .cart-container {
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
-}
-
-.left-section {
-  flex: 2;
-}
-
-.right-section {
-  flex: 1;
 }
 
 .discount-banner {
@@ -509,11 +510,8 @@ html {
   display: flex;
   align-items: center;
   font-size: 16px;
-  width: 100%;
+  width: fit-content;
   margin-top: 20px;
-  position: sticky;
-  bottom: 0;
-  z-index: 10
 }
 
 .discount-banner i {
@@ -548,7 +546,12 @@ html {
   margin-left: 20px; /* Adds spacing between name and price */
 }
 
-.cart-container {
+.checkout-page {
+  padding-top: 40px;
+}
+
+.checkout-container {
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -561,6 +564,7 @@ html {
   max-height: 500px; /* Adjust height as needed */
   overflow-y: auto;
   padding-right: 10px; /* Prevents scrollbar from overlapping content */
+  max-width: 800px;
 }
 
 /* Right Section: Fixed Order Summary */
@@ -569,50 +573,352 @@ html {
   position: sticky;
   top: 20px; /* Keeps it in place when scrolling */
 }
-
-.totalCost{
-  margin-top: 20px;
-  margin-bottom: 20px;
+.step-text {
+  font-weight: 500;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
 
-.deliveryTime{
-  margin-bottom: 20px;
+.step-text:hover {
+  color: #555;
 }
 
-.create-account-card {
+.active-step {
+  font-weight: 700;
+  color: black;
+}
+.step-navigation {
+  display: flex;
+  justify-content: flex-start; 
+  gap: 20px; 
+  margin-top: 10px; 
+}
+
+.step-text {
+  font-size: 16px;
+  font-weight: normal;
+  color: gray;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.active-step {
+  font-weight: bold;
+  color: black;
+}
+
+.step-separator {
+  margin: 0 15px; /* Adjust spacing between steps */
+  color: gray;
+}
+
+.address-container {
+  max-width: 1200px;
+  margin-left: 0px;
+}
+
+.address-card {
+  border: 2px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.selected {
+  border: 2px solid var(--PrimaryAccsent);
+  border-radius: 8px;
+}
+
+.address-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.address-item {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Ensures spacing between radio and text */
+}
+
+.radio {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #666;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio:checked {
+  border-color: var(--PrimaryAccsent);
+  background-color: var(--PrimaryAccsent);
+  box-shadow: inset 0 0 0 3px white;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--PrimaryAccsent);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 4px;
+  border: 2px solid;
+}
+
+.tag.home {
+  color: var(--PrimaryAccsent); 
+  border-color: var(--PrimaryAccsent); 
+  background: none; 
+}
+
+.tag.office {
+  color: var(--PrimaryAccsent); 
+  border-color: var(--PrimaryAccsent); 
+  background: none; 
+}
+
+.address {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 3px;
+  margin-top: 7px;
+}
+
+.contact {
+  font-size: 14px;
+  color: #333;
+  margin-top: 2px;
+}
+
+.address-actions {
+  text-align: right;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.edit {
+  color: #333;
+  cursor: pointer;
+}
+
+.remove {
+  color: var(--PrimaryAccsent);
+  cursor: pointer;
+}
+
+.add-address {
+  color: var(--PrimaryAccsent);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.shipment-method {
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+}
+
+.shipment-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 1px solid #ddd; /* Light gray separator */
+}
+
+.shipment-option:last-child {
+  border-bottom: none; /* Remove border for the last item */
+}
+
+.shipment-option input {
+  display: none;
+}
+
+.radio-circle {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shipment-option input:checked + .radio-circle {
+  border-color: var(--PrimaryAccsent);
+  background-color: var(--PrimaryAccsent);
+  box-shadow: inset 0 0 0 2px white;
+}
+
+.shipment-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.shipment-info strong {
+  font-size: 14px;
+}
+
+.shipment-date {
+  font-weight: bold;
+  font-size: 14px;
+  color: #222;
+}
+
+.payment-method {
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.payment-option:last-child {
+  border-bottom: none;
+}
+
+.custom-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-option input:checked + .custom-radio {
+  border-color: var(--PrimaryAccsent);
+  background-color: var(--PrimaryAccsent);
+  box-shadow: inset 0 0 0 3px white;
+}
+
+.payment-icon {
+  width: 30px;
+  height: auto;
+}
+
+.remove-payment {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-payment {
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--PrimaryAccsent);
+}
+
+.add-icon {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--PrimaryAccsent);
+}
+
+.login-card .not-a-robot-checkbox {
   background-color: #ffffff;
+  border: 1px solid;
+  border-color: #ff0072;
+  border-radius: 32px;
+  height: 43px;
+  position: relative;
+  width: 209px;
+}
+
+.login-card .text-wrapper-7 {
+  color: #ff0072;
+  font-family: "Poppins-Light", Helvetica;
+  top:8px;
+  font-size: 15px;
+  left:10px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.50px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.login-card {
+  background-color: #FF0073;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  width: 1260px;
+  height:650px;
 }
 
-.create-account-card .div {
+.login-card .div {
   background-color: #ffffff;
+  border-radius: 20px;
+  top: 100px;
   height: 507px;
   position: relative;
+  display: flex;
   width: 1089px;
 }
 
-.create-account-card .image {
+.login-card .image {
+  background-image: url(https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/ANIME%20PINK.jpg);
   background-size: 100% 100%;
   height: 507px;
+  border-radius: 20px 0 0 20px;
   left: 0;
   position: absolute;
   top: 0;
   width: 558px;
 }
 
-.create-account-card .create-an-account {
-  height: 486px;
+.login-card .create-an-account {
+  height: 590px;
   left: 558px;
   overflow: hidden;
   position: absolute;
-  top: 21px;
+  top: -100px;
   width: 531px;
 }
 
-.create-account-card .logo {
+.login-card .logo {
   background-color: #c4c4c4;
   border-radius: 20px;
   height: 40px;
@@ -622,18 +928,17 @@ html {
   width: 40px;
 }
 
-.create-account-card .content {
+.login-card .content {
   align-items: flex-start;
   display: inline-flex;
   flex-direction: column;
   gap: 9px;
-  height: 455px;
-  left: 32px;
+  left: 34px;
   position: absolute;
-  top: 11px;
+  top: 112px;
 }
 
-.create-account-card .frame-2 {
+.login-card .div-wrapper {
   align-items: flex-start;
   display: inline-flex;
   flex-direction: column;
@@ -642,7 +947,7 @@ html {
   position: relative;
 }
 
-.create-account-card .text-wrapper-3 {
+.login-card .text-wrapper-3 {
   color: #ff0072;
   font-family: "Poppins-Medium", Helvetica;
   font-size: 31px;
@@ -650,27 +955,13 @@ html {
   height: 23px;
   letter-spacing: 0;
   line-height: normal;
-  margin-top: -1.50px;
   position: relative;
   white-space: nowrap;
   width: 294px;
+  left:-2px;
 }
 
-.create-account-card .have-an-account-login {
-  height: 18px !important;
-  margin-bottom: -0.50px !important;
-}
-
-.create-account-card .have-an-account-instance {
-  font-size: 11px !important;
-  margin-bottom: -2.00px !important;
-}
-
-.create-account-card .have-an-account-login-instance {
-  color: #ff0072 !important;
-}
-
-.create-account-card .frame-3 {
+.login-card .frame-2 {
   align-items: flex-start;
   display: flex;
   flex: 0 0 auto;
@@ -680,7 +971,7 @@ html {
   width: 387px;
 }
 
-.create-account-card .text-field {
+.login-card .text-field {
   align-items: flex-start;
   display: flex;
   flex: 0 0 auto;
@@ -690,14 +981,14 @@ html {
   width: 387px;
 }
 
-.create-account-card .frame-4 {
+.login-card .frame-3 {
   align-self: stretch;
   height: 23px;
   position: relative;
   width: 100%;
 }
 
-.create-account-card .label {
+.login-card .label {
   background: transparent;
   border: none;
   color: #666666;
@@ -712,7 +1003,7 @@ html {
   top: -1px;
 }
 
-.create-account-card .text-field-2 {
+.login-card .text-field-2 {
   align-self: stretch;
   border: 1px solid;
   border-color: #66666659;
@@ -722,7 +1013,7 @@ html {
   width: 100%;
 }
 
-.create-account-card .label-2 {
+.login-card .label-2 {
   color: #666666;
   font-family: "Poppins-Regular", Helvetica;
   font-size: 15px;
@@ -734,120 +1025,24 @@ html {
   top: -1px;
 }
 
-.create-account-card .password-hide-and {
+.login-card .password-hide-and {
   height: 24px !important;
   left: 358px !important;
   position: absolute !important;
-  top: 0 !important;
+  top: -1px !important;
   width: 24px !important;
 }
 
-.create-account-card .error-message {
-  color: #666666;
-  font-family: "Poppins-Regular", Helvetica;
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: normal;
-  position: relative;
-  width: fit-content;
-}
-
-.create-account-card .link-text {
-  align-items: flex-start;
-  display: flex;
-  gap: 10px;
-  height: 42px;
-  padding: 8px 8px 8px 0px;
-  position: relative;
-  width: 363px;
-}
-
-.create-account-card .by-creating-an {
-  color: transparent;
-  font-family: "Poppins-Regular", Helvetica;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: normal;
-  margin-bottom: -7.00px;
-  margin-top: -1.00px;
-  position: relative;
-  width: fit-content;
-}
-
-.create-account-card .text-wrapper-4 {
-  color: #666666;
-}
-
-.create-account-card .text-wrapper-5 {
-  color: #111111;
-  text-decoration: underline;
-}
-
-.create-account-card .text-wrapper-6 {
-  color: #666666;
-  text-decoration: underline;
-}
-
-.create-account-card .not-a-robot-checkbox {
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ff0072;
-  border-radius: 32px;
-  height: 43px;
-  position: relative;
-  width: 209px;
-}
-
-.create-account-card .frame-5 {
-  align-items: center;
-  display: inline-flex;
-  gap: 8px;
-  justify-content: center;
-  left: 18px;
-  position: absolute;
-  top: 13px;
-}
-
-.create-account-card .check-box {
-  height: 18px !important;
-  position: relative !important;
-  width: 18px !important;
-}
-
-.create-account-card .text-wrapper-7 {
-  color: #ff0072;
-  font-family: "Poppins-Light", Helvetica;
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0;
-  line-height: normal;
-  margin-top: -0.50px;
-  position: relative;
-  text-align: center;
-  width: fit-content;
-}
-
-.create-account-card .google-recaptcha {
-  height: 26px !important;
-  left: 164px !important;
-  position: absolute !important;
-  top: 9px !important;
-  width: 27px !important;
-}
-
-.create-account-card .frame-6 {
+.login-card .frame-4 {
   align-items: flex-start;
   display: inline-flex;
   flex: 0 0 auto;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: -1.00px;
   position: relative;
 }
 
-.create-account-card .button-instance {
+.login-card .button-instance {
   background-color: var(--primary-accsent) !important;
   border-radius: 32px !important;
   height: 46px !important;
@@ -855,20 +1050,90 @@ html {
   width: 209px !important;
 }
 
-.create-account-card .design-component-instance-node {
-  left: 24px !important;
+.login-card .design-component-instance-node {
+  left: 82px !important;
   top: 10px !important;
 }
 
-.create-account-card .button-2 {
+.login-card .button-2 {
   color: #ffe4ec !important;
   font-size: 17px !important;
 }
 
-.create-account-card .have-an-account-2 {
+.login-card .have-an-account-login {
   flex: 0 0 auto !important;
 }
 
-.create-account-card .have-an-account-3 {
+.login-card .have-an-account-instance {
   font-size: 11px !important;
 }
+
+.login-card .have-an-account-login-instance {
+  color: #ff0072 !important;
+}
+
+.sign-btn {
+  background-color: #e91e63; /* Pinkish color */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+.secondaryBtn:hover {
+  background-color: var(--PrimaryAccsent);
+  color: var(--SecondaryColor); /* Slightly darker on hover */
+}
+
+
+.primaryBtn:hover {
+  background-color: var(--SecondaryColor);
+  color: var(--PrimaryAccsent); /* Slightly darker on hover */
+}
+
+.sign-btn:hover {
+  background-color: var(--SecondaryColor);
+  color: var(--PrimaryAccsent); /* Slightly darker on hover */
+}
+
+.login-card .error-message {
+  color: #666666;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+}
+
+.login-card .description {
+  color: #FF0073;
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+}
+
+.login-card .check-box {
+  left: 10px;
+  height: 18px !important;
+  position: relative !important;
+  width: 18px !important;
+}
+
+.login-card .frame-5 {
+  align-self: stretch;
+  height: 10px;
+  position: relative;
+  width: 100%;
+}
+
