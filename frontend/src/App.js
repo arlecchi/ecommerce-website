@@ -1,3 +1,4 @@
+import React from 'react';
 import HomePage from './component/HomePage.js';
 import ProductDetail from "./component/ProductDetail";
 import CartPage from "./component/CartPage";
