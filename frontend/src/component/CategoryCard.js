@@ -17,7 +17,7 @@ const CategoryCard = ({ setSearchQuery, productRef }) => {
     return (
         <div className="container category my-5">
             <div className="title-wrapper">
-                <h6 onClick={handleResetFilter}>
+                <h6 onClick={handleResetFilter} className="text-nowrap align-text-center">
                     Product Category
                 </h6>
             </div>
