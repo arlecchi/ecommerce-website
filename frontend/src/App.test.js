@@ -21,3 +21,4 @@ test('renders the MerchVerse brand name', async () => {
   const brands = await screen.findAllByText(/MerchVerse/i);
   expect(brands.length).toBeGreaterThan(0);
 });
+//this works
