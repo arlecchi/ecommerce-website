@@ -7,4 +7,5 @@ to make sure for the api to get the data for MyContext.js through localhost (the
 ## 2. move to frontend folder and run 'npm start' to start the react js project
 
 # OR
-## docker compose up --build in root
+## docker compose up --build 
+in root folder
