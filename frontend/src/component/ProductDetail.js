@@ -11,16 +11,16 @@ const ProductDetail = () => {
     const [wishlist, setWishlist] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://api.localhost:3200/product/${id}`)
+        axios.get(`/api/product/${id}`)
             .then(response => {
                 setProduct(response.data);
 
-                // Load wishlist state from localStorage
                 const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
                 setWishlist(savedWishlist.includes(response.data.id));
             })
             .catch(error => console.error("Error fetching product data:", error));
     }, [id]);
+
 
     const handleIncrease = () => setQuantity((prev) => Math.min(prev + 1, 10)); 
     const handleDecrease = () => setQuantity((prev) => Math.max(prev - 1, 1));
