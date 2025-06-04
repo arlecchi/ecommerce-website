@@ -1,0 +1,10 @@
+[
+    {
+        "id" : 1, 
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/Banner%20Dandanan.png"
+    },
+    {
+        "id" : 2, 
+        "image" : "https://raw.githubusercontent.com/arlecchi/image-hosting/refs/heads/main/Banner%20BlueLock.png"
+    }
+]

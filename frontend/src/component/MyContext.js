@@ -8,21 +8,34 @@ const Provider = ({children})=>{
     const [category, setCategory] = useState([])
     const [banner, setBanner] = useState([])
 
-
-//run 'node app' in terminal from server folder
     const getDataProduct = async () => {
-        const response = await axios.get('/api/Product')
-        setProduct(response.data)
+        try {
+            const response = await axios.get('/api/Product')
+            // Change this line - access the products array from response
+            setProduct(response.data.products || response.data)
+        } catch (error) {
+            console.error('Error fetching products:', error)
+        }
     }
 
     const getDataCategory = async () => {
-        const response = await axios.get('/api/Category')
-        setCategory(response.data)
+        try {
+            const response = await axios.get('/api/Category')
+            // Change this line - access the categories array from response
+            setCategory(response.data.categories || response.data)
+        } catch (error) {
+            console.error('Error fetching categories:', error)
+        }
     }
     
     const getDataBanner = async () => {
-        const response = await axios.get('/api/Banner')
-        setBanner(response.data)
+        try {
+            const response = await axios.get('/api/Banner')
+            // Change this line - access the banners array from response
+            setBanner(response.data.banners || response.data)
+        } catch (error) {
+            console.error('Error fetching banners:', error)
+        }
     }
 
     useEffect(()=>{
