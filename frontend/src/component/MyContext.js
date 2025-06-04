@@ -11,17 +11,17 @@ const Provider = ({children})=>{
 
 //run 'node app' in terminal from server folder
     const getDataProduct = async () => {
-        const response = await axios.get('http://api.localhost:3200/product')
+        const response = await axios.get('/api/Product')
         setProduct(response.data)
     }
 
     const getDataCategory = async () => {
-        const response = await axios.get('http://api.localhost:3200/category')
+        const response = await axios.get('/api/Category')
         setCategory(response.data)
     }
     
     const getDataBanner = async () => {
-        const response = await axios.get('http://api.localhost:3200/banner')
+        const response = await axios.get('/api/Banner')
         setBanner(response.data)
     }
 
