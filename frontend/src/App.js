@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./component/Login";
 
 // Import your Context Provider here
-import { Provider } from "./mycontext";  // Adjust the path if needed
+import { Provider } from "./component/MyContext";  // Adjust the path if needed
 
 const App = () => {
     return (
