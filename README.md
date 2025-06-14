@@ -22,10 +22,9 @@ This application allows users to browse, search, and order merchandise products 
 - Choose shipping type, address, and payment methods
 
 **For Administrators**
-- Add, update, and delete products  
-- Check and manage product stock  
-- Validate payment receipts  
-- Ship products and update delivery status  
+- Add new products with name, description, price, and image
+- Edit or delete existing product listings
+- Monitor inventory and update stock quantities
 
 ### Tech Stack
 
