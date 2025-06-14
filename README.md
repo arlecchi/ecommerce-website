@@ -2,7 +2,7 @@
 
 An e‑commerce website project developed for Workshop on Implementation of Software Design.
 
-This application allows users to browse, search, and order merchandise products online. Customers can view search products, product details, add items to a wishlist or shopping cart, and complete purchases with manual payment confirmation. Administrators can manage products, validate payments, and handle order fulfillment.
+This application allows users to browse, search, and order merchandise products online. Customers can view search products, product details, add items to a wishlist or shopping cart, and complete purchases with manual payment confirmation. Administrators can manage products, add or remove products and update stocks.
 
 ---
 
