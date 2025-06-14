@@ -1,4 +1,4 @@
-# MerchVerse ecommerce-website
+# MerchVerse e-commerce website
 
 An e‑commerce website project developed for Workshop on Implementation of Software Design.
 
